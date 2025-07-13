@@ -1,8 +1,49 @@
 import Image from 'next/legacy/image';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Header() {
   const { t } = useTranslation('common');
+  const router = useRouter();
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'zh', name: '简体中文', flag: '🇨🇳' },
+    { code: 'zh-TW', name: '繁體中文', flag: '🇹🇼' },
+    { code: 'ko', name: '한국어', flag: '🇰🇷' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  ];
+
+  const currentLanguage =
+    languages.find((lang) => lang.code === router.locale) || languages[0];
+
+  const changeLanguage = (locale: string) => {
+    router.push(router.asPath, router.asPath, { locale });
+    setIsLanguageDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header className="relative bg-white">
@@ -37,6 +78,71 @@ export default function Header() {
 
           {/* Navigation/Action area */}
           <div className="flex items-center space-x-4">
+            {/* Language switcher */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() =>
+                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
+                }
+                className="flex items-center space-x-2 px-3 py-2 border-2 border-gray-200 rounded-lg hover:border-black transition-colors duration-200 text-sm"
+              >
+                <span className="text-lg">{currentLanguage.flag}</span>
+                <span className="hidden sm:inline font-medium text-gray-700">
+                  {currentLanguage.name}
+                </span>
+                <svg
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+                    isLanguageDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              {/* Language dropdown */}
+              {isLanguageDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white border-2 border-gray-200 rounded-lg shadow-lg z-50">
+                  <div className="py-2">
+                    {languages.map((language) => (
+                      <button
+                        key={language.code}
+                        type="button"
+                        onClick={() => changeLanguage(language.code)}
+                        className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${
+                          language.code === router.locale
+                            ? 'bg-gray-100 font-medium text-black'
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        <span className="text-lg">{language.flag}</span>
+                        <span>{language.name}</span>
+                        {language.code === router.locale && (
+                          <svg
+                            className="w-4 h-4 text-black ml-auto"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Start button */}
             <button
               type="button"

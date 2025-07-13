@@ -62,8 +62,8 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600">
-              We&apos;d love to hear from you. Send us a message and
-              we&apos;ll respond as soon as possible.
+              We&apos;d love to hear from you. Send us a message and we&apos;ll
+              respond as soon as possible.
             </p>
           </div>
 
@@ -271,7 +271,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">FAQ</h3>
                       <p className="text-gray-600 mb-2">
-                        Check our FAQ page for quick answers to common questions.
+                        Check our FAQ page for quick answers to common
+                        questions.
                       </p>
                       <Link
                         href="/faq"
