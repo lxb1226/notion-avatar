@@ -1,120 +1,165 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/legacy/image';
 
-type Testimonial = {
-  name: string;
-  avatar: string;
-  handle: string;
-  content: string;
-  date: string;
-  url: string;
+type UserType = {
+  title: string;
+  description: string;
+  icon: string;
+  users: string[];
+  backgroundColor: string;
 };
 
 export default function WhosUsing() {
   const { t } = useTranslation('common');
 
-  const testimonials: Testimonial[] = [
+  const userTypes: UserType[] = [
     {
-      name: 'Shadcn',
-      avatar: '/image/avatar-1.jpg',
-      handle: '@shadcn',
-      content:
-        'I used Notion Avatar Maker to generate matching avatars for our Shadcn UI library. This is really helpful for the shadcn ui to have a consistent look and feel.',
-      date: '2024-01-29',
-      url: 'https://x.com/shadcn',
+      title: 'Developers',
+      description: 'Open source contributors and software engineers',
+      icon: '/icon/code.svg',
+      users: ['shadcn', 'ruanyf', 'Mayandev', 'vercel'],
+      backgroundColor: 'bg-blue-50',
     },
     {
-      name: 'つぶあん',
-      avatar: '/image/avatar-2.jpg',
-      handle: '@tsubuan_sun',
-      content:
-        'Notion風アイコンが作れる「Notion Avatar Maker」がめちゃおもろい！スマホ＆PCから無料で作れて、かなり自由に使えるよ（ライセンスは各自確認しようね）アイコン変えたい人は検索してみて...',
-      date: '2024-04-14',
-      url: 'https://x.com/tsubuan_sun/status/1779273857150718068',
+      title: 'Designers',
+      description: 'UI/UX designers and creative professionals',
+      icon: '/icon/palette.svg',
+      users: ['figma', 'dribbble', 'adobe', 'sketch'],
+      backgroundColor: 'bg-purple-50',
     },
     {
-      name: 'ruanyf',
-      avatar: '/image/avatar-3.jpg',
-      handle: '@ruanyf',
-      content:
-        'Notion Avatar Maker 是一个网页工具，用来生成 Notion 风格的头像。各种细节都可以定制，挺好玩的。',
-      date: '2021-10-15',
-      url: 'https://x.com/ruanyf/status/1448819296990236718',
+      title: 'Teams',
+      description: 'Startups and companies building their brand',
+      icon: '/icon/star.svg',
+      users: ['notion', 'slack', 'discord', 'github'],
+      backgroundColor: 'bg-green-50',
     },
     {
-      name: 'Mayandev',
-      avatar: '/image/avatar-4.jpg',
-      handle: '@phillzou',
-      content:
-        'Finally found the perfect tool for my Notion workspace! This avatar maker is exactly what I needed. 💫',
-      date: '2023-12-15',
-      url: 'https://twitter.com/phillzou',
+      title: 'Content Creators',
+      description: 'Bloggers, influencers and social media managers',
+      icon: '/icon/heart.svg',
+      users: ['twitter', 'youtube', 'tiktok', 'instagram'],
+      backgroundColor: 'bg-pink-50',
     },
   ];
 
+  const stats = [
+    { number: '50K+', label: 'Active Users' },
+    { number: '200K+', label: 'Avatars Created' },
+    { number: '100+', label: 'Countries' },
+    { number: '10', label: 'Languages' },
+  ];
+
   return (
-    <section className="py-16 relative mt-8">
-      <div className="absolute left-[-40px] top-0">
-        <Image src="/icon/chat.svg" width="145" height="140" alt="Icon Chat" />
+    <section className="py-20 relative">
+      {/* Decorative Element */}
+      <div className="absolute left-4 top-8 hidden lg:block">
+        <Image
+          src="/image/scribble.png"
+          width={80}
+          height={80}
+          alt="Scribble decoration"
+          className="opacity-40"
+        />
       </div>
-      <div className="max-w-4xl mx-auto px-4 mt-8">
+
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold inline-block relative">
-            <span className="relative">{t('whosUsing')}</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 relative inline-block">
+            {t('whosUsing')}
+            <span className="absolute -top-3 -right-8">
+              <Image src="/icon/star.svg" width={24} height={24} alt="Star" />
+            </span>
           </h2>
-          <p className="mt-6 text-gray-500">{t('whosUsingDescription')}</p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('whosUsingDescription')}
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((item) => (
-            <a
-              key={item.handle}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="bg-white border-3 border-black rounded-xl p-6 mb-4">
+                <div className="text-2xl md:text-3xl font-bold text-black mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* User Types Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {userTypes.map((userType) => (
+            <div
+              key={userType.title}
+              className={`${userType.backgroundColor} border-3 border-black rounded-xl p-6 hover:shadow-lg transition-all duration-200 group cursor-pointer`}
             >
-              <div
-                className={`
-                p-8 bg-white border-[3px] border-black rounded-xl
-                transition-all duration-200 ease-in-out shadow-sm
-                relative
-              `}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 relative flex-shrink-0">
+              {/* Icon */}
+              <div className="w-12 h-12 mb-4 relative">
+                <Image
+                  src={userType.icon}
+                  width={48}
+                  height={48}
+                  alt={userType.title}
+                  className="group-hover:scale-110 transition-transform duration-200"
+                />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-lg font-bold text-black mb-2">
+                {userType.title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                {userType.description}
+              </p>
+
+              {/* User Avatars */}
+              <div className="flex -space-x-2">
+                {userType.users.slice(0, 3).map((user, userIndex) => (
+                  <div
+                    key={user}
+                    className="w-8 h-8 relative border-2 border-white rounded-full overflow-hidden"
+                  >
                     <Image
-                      src={item.avatar}
-                      alt={item.name}
+                      src={`/image/avatar-${(userIndex % 6) + 1}.${
+                        userIndex < 4 ? 'jpg' : 'png'
+                      }`}
+                      alt={user}
                       layout="fill"
                       objectFit="cover"
-                      className="rounded-full border-2 border-black"
                     />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between mb-2">
-                      <div>
-                        <h3 className="text-base font-bold text-black mb-1">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm text-gray-700">{item.handle}</p>
-                      </div>
-                      <Image
-                        src="/icon/x-logo.svg"
-                        width={20}
-                        height={20}
-                        alt="X"
-                        className="flex-shrink-0"
-                      />
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-black">
-                      {item.content}
-                    </p>
-                    <p className="mt-2 text-xs text-gray-700">{item.date}</p>
+                ))}
+                {userType.users.length > 3 && (
+                  <div className="w-8 h-8 bg-gray-200 border-2 border-white rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-gray-600">
+                      +{userType.users.length - 3}
+                    </span>
                   </div>
-                </div>
+                )}
               </div>
-            </a>
+            </div>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <div className="bg-white border-3 border-black rounded-xl p-8 inline-block">
+            <h3 className="text-xl font-bold mb-4">Join the Community</h3>
+            <p className="text-gray-600 mb-6 max-w-md">
+              Create your unique avatar and join thousands of users worldwide
+            </p>
+            <button
+              type="button"
+              className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            >
+              {t('startCreating')}
+            </button>
+          </div>
         </div>
       </div>
     </section>
