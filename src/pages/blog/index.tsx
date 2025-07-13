@@ -108,7 +108,7 @@ export default function Blog({
       description: post.excerpt,
       url: `https://notion-avatar.app/blog/${post.slug}`,
       datePublished: post.publishedAt,
-      dateModified: post.updatedAt,
+      dateModified: post.publishedAt, // Use publishedAt as fallback since updatedAt is not available in OptimizedBlogPost
       author: {
         '@type': 'Person',
         name: post.author.name,
