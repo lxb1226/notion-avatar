@@ -9,13 +9,6 @@ export default function Footer() {
       <Image src="/icon/line.svg" width="125" height="54" />
       <div className="flex justify-center mt-10">
         <a
-          className="transition hover:underline"
-          href="https://github.com/mayandev/notion-avatar"
-        >
-          {t(`github`)}
-        </a>
-        <span className="mx-2">·</span>
-        <a
           className="transition hidden md:inline-block hover:underline"
           href="https://dribbble.com/phillzou"
         >

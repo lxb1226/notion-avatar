@@ -66,22 +66,6 @@ export default function CTASection() {
             />
             {t('startNow')}
           </button>
-
-          <a
-            href="https://github.com/Mayandev/notion-avatar"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="focus:ring-2 focus:ring-offset-2 focus:ring-black hover:bg-gray-50 outline-none inline-flex items-center justify-center px-8 py-4 bg-white border-3 border-black text-black font-bold rounded-full transition-all duration-200"
-          >
-            <Image
-              src="/icon/github.svg"
-              alt="GitHub"
-              width={24}
-              height={24}
-              className="mr-3"
-            />
-            {t('viewOnGitHub')}
-          </a>
         </div>
 
         {/* Additional info */}

@@ -45,17 +45,6 @@ export default function SocialDemo() {
 
           <div className="flex space-x-4">
             <a
-              href="https://github.com/Mayandev"
-              className="text-gray-600 hover:text-black"
-            >
-              <Image
-                src="/icon/github.svg"
-                width={24}
-                height={24}
-                alt="GitHub"
-              />
-            </a>
-            <a
               href="https://x.com/phillzou"
               className="text-gray-600 hover:text-black"
             >

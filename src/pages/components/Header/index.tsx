@@ -37,22 +37,6 @@ export default function Header() {
 
           {/* Navigation/Action area */}
           <div className="flex items-center space-x-4">
-            {/* GitHub link */}
-            <a
-              href="https://github.com/Mayandev/notion-avatar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center space-x-2 px-4 py-2 bg-white border-3 border-black rounded-full hover:bg-gray-50 transition-colors duration-200 text-sm font-bold"
-            >
-              <Image
-                src="/icon/github.svg"
-                alt="GitHub"
-                width={18}
-                height={18}
-              />
-              <span>GitHub</span>
-            </a>
-
             {/* Start button */}
             <button
               type="button"

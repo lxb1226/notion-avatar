@@ -111,14 +111,12 @@ export default function FAQSection() {
             </h3>
             <p className="text-gray-600 mb-6">{t('contactUsDescription')}</p>
             <a
-              href="https://github.com/Mayandev/notion-avatar/issues"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:support@example.com"
               className="focus:ring-2 focus:ring-offset-2 focus:ring-black hover:bg-gray-50 outline-none inline-flex items-center justify-center px-6 py-3 bg-white border-3 border-black text-black font-bold rounded-full transition-colors"
             >
               <Image
-                src="/icon/github.svg"
-                alt="GitHub"
+                src="/icon/send.svg"
+                alt="Contact"
                 width={20}
                 height={20}
                 className="mr-2"

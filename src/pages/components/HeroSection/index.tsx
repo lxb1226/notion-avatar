@@ -87,12 +87,6 @@ export default function HeroSection() {
             <p className="text-gray-500 mb-4">{t('socialProof')}</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
               <Image
-                src="/icon/github.svg"
-                alt="GitHub"
-                width={32}
-                height={32}
-              />
-              <Image
                 src="/icon/x-logo.svg"
                 alt="Twitter/X"
                 width={32}

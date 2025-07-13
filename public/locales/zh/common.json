@@ -13,7 +13,6 @@
   "accessories": "装饰",
   "details": "细节",
   "beard": "胡须",
-  "github": "代码",
   "dribbble": "设计稿",
   "twitter": "联系我",
   "coffee": "捐赠",
@@ -27,7 +26,7 @@
   "modalCancel": "关闭",
   "modalConfirm": "确认",
   "siteTitle": "自定义头像制作器",
-  "siteDescription": "一个手绘风格头像制作工具，支持自定义面部特征、发型、眼镜、胡须和配饰，一键生成独特的个人头像。适用于 GitHub、Twitter、LinkedIn 等社交平台，完美契合团队协作和个人品牌打造。立即体验，轻松创建专属于你的自定义头像！",
+  "siteDescription": "一个手绘风格头像制作工具，支持自定义面部特征、发型、眼镜、胡须和配饰，一键生成独特的个人头像。适用于 Twitter、LinkedIn 等社交平台，完美契合团队协作和个人品牌打造。立即体验，轻松创建专属于你的自定义头像！",
   "404Title": "啊哦！页面走丢了。",
   "404Redirect": "返回主页",
   "copy": "复制",
@@ -46,11 +45,11 @@
   "shareModalHint": "分享到你喜欢的社交媒体吧！",
   "shareContent": "我用自定义头像制作器生成了一个头像，快来看看吧！",
   "avatarMaker": "头像制作",
-  "siteKeywords": "头像生成器,手绘风格头像,个性化头像,自定义头像,简约头像,团队头像,个人品牌,社交媒体头像,SVG头像,PNG头像,免费头像制作,在线头像生成,GitHub头像,Twitter头像,LinkedIn头像",
+  "siteKeywords": "头像生成器,手绘风格头像,个性化头像,自定义头像,简约头像,团队头像,个人品牌,社交媒体头像,SVG头像,PNG头像,免费头像制作,在线头像生成,Twitter头像,LinkedIn头像",
   "whosUsing": "谁在使用",
   "whosUsingDescription": "来自全球的团队和个人都在使用自定义头像制作器",
   "useCases": "使用场景",
-  "useCasesDescription": "探索手绘风格头像的多种应用场景"
+  "useCasesDescription": "探索手绘风格头像的多种应用场景",
   "you": "你",
   "chatDemo": {
     "message1": "给你看看我新设置的头像！",
@@ -65,12 +64,12 @@
     "handle": "xiaoming",
     "bio": "全栈工程师 / 开源爱好者",
     "tweet": "刚用自定义头像制作器制作了新头像！简约的设计风格真的太棒了 ✨",
-    "shareTitle": "分享我的自定义头像"
+    "shareTitle": "分享我的自定义头像",
     "shareText": "快来看看我用自定义头像制作器制作的新头像！"
   },
   "resourceStore": {
     "title": "设计资源",
-    "description": "获取自定义头像制作器的完整设计资源包，包含网站设计稿和装饰元素"
+    "description": "获取自定义头像制作器的完整设计资源包，包含网站设计稿和装饰元素",
     "buyNow": "立即购买",
     "designPack": {
       "title": "完整网站设计稿",
@@ -81,7 +80,7 @@
     },
     "scribblesPack": {
       "title": "手绘装饰元素包",
-      "description": "手绘风格的装饰元素，为你的设计添加趣味性"
+      "description": "手绘风格的装饰元素，为你的设计添加趣味性",
       "features": {
         "1": "100+ 手绘装饰元素"
       }
