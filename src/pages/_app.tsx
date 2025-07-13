@@ -7,12 +7,16 @@ import { appWithTranslation } from 'next-i18next';
 
 import { Toaster } from 'react-hot-toast';
 import * as ga from '../lib/ga';
+import { initClarity } from '../lib/clarity';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const AnyComponent = Component as any;
 
   useEffect(() => {
+    // Initialize Microsoft Clarity
+    initClarity();
+
     const handleRouteChange = (url: string) => {
       ga.pageview(url);
     };
