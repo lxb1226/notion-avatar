@@ -26,9 +26,9 @@
   "modalHint": "Appuyez longuement ou cliquez avec le bouton droit pour enregistrer l'avatar dans votre album",
   "modalCancel": "Annuler",
   "modalConfirm": "Confirmer",
-  "siteTitle": "Créateur d'Avatar Notion",
-  "siteDescription": "Un outil de création d'avatars style dessiné à la main Notion qui permet de personnaliser les traits du visage, les coiffures, les lunettes, les barbes et les accessoires pour générer des avatars uniques en un clic. Parfait pour Notion, GitHub, Twitter et autres plateformes sociales, idéal pour la collaboration d'équipe et l'image de marque personnelle. Essayez-le maintenant et créez facilement votre propre avatar style Notion !",
-  "siteKeywords": "Avatar Notion,Créateur d'Avatar,Style Notion,Avatar Dessiné,Avatar Personnalisé,Avatar Minimaliste,Avatar d'Équipe,Marque Personnelle,Avatar Réseaux Sociaux,Avatar SVG,Avatar PNG,Créateur d'Avatar Gratuit,Générateur d'Avatar en Ligne,Avatar GitHub,Avatar Twitter",
+  "siteTitle": "Créateur d'Avatar Personnalisé",
+  "siteDescription": "Un outil de création d'avatars style dessiné à la main qui permet de personnaliser les traits du visage, les coiffures, les lunettes, les barbes et les accessoires pour générer des avatars uniques en un clic. Parfait pour GitHub, Twitter, LinkedIn et autres plateformes sociales, idéal pour la collaboration d'équipe et l'image de marque personnelle. Essayez-le maintenant et créez facilement votre propre avatar personnalisé !",
+  "siteKeywords": "Créateur d'Avatar,Avatar Personnalisé,Avatar Dessiné,Avatar Minimaliste,Avatar d'Équipe,Marque Personnelle,Avatar Réseaux Sociaux,Avatar SVG,Avatar PNG,Créateur d'Avatar Gratuit,Générateur d'Avatar en Ligne,Avatar GitHub,Avatar Twitter,Avatar LinkedIn",
   "404Title": "Oups ! Page non trouvée",
   "404Redirect": "Retour à l'accueil",
   "copy": "Copier",
@@ -45,12 +45,12 @@
   "christmas": "Noël",
   "downloadSuccess": "Téléchargement réussi",
   "shareModalHint": "Partagez sur vos réseaux sociaux préférés !",
-  "shareContent": "Je viens de créer un avatar avec Notion Avatar Maker, regardez ça !",
+  "shareContent": "Je viens de créer un avatar avec le Créateur d'Avatar, regardez ça !",
   "avatarMaker": "Créateur d'Avatar",
   "whosUsing": "Qui l'utilise",
-  "whosUsingDescription": "Des équipes et des individus du monde entier utilisent Notion Avatar",
+  "whosUsingDescription": "Des équipes et des individus du monde entier utilisent des avatars personnalisés",
   "useCases": "Cas d'utilisation",
-  "useCasesDescription": "Découvrez les applications polyvalentes des avatars style Notion",
+  "useCasesDescription": "Découvrez les applications polyvalentes des avatars style dessiné à la main",
   "you": "Vous",
   "chatDemo": {
     "message1": "Regardez mon nouvel avatar !",
@@ -64,13 +64,13 @@
     "name": "Phill Zou",
     "handle": "phillzou",
     "bio": "Développeur Full-stack / Passionné d'Open Source",
-    "tweet": "Je viens de créer mon avatar avec Notion Avatar Maker ! J'adore ce style minimaliste ✨",
-    "shareTitle": "Partager mon avatar style Notion",
-    "shareText": "Découvrez mon nouvel avatar créé avec Notion Avatar Maker !"
+    "tweet": "Je viens de créer mon avatar avec le Créateur d'Avatar ! J'adore ce style minimaliste ✨",
+    "shareTitle": "Partager mon avatar personnalisé",
+    "shareText": "Découvrez mon nouvel avatar créé avec le Créateur d'Avatar !"
   },
   "resourceStore": {
     "title": "Ressources de Design",
-    "description": "Obtenez le pack complet de ressources de design pour Notion Avatar Maker, incluant le design du site web et les éléments décoratifs",
+    "description": "Obtenez le pack complet de ressources de design pour le Créateur d'Avatar, incluant le design du site web et les éléments décoratifs",
     "buyNow": "Acheter",
     "designPack": {
       "title": "Design Complet du Site Web",
@@ -81,7 +81,7 @@
     },
     "scribblesPack": {
       "title": "Pack d'Éléments Dessinés à la Main",
-      "description": "Éléments décoratifs style Notion dessinés à la main pour ajouter du fun à votre design",
+      "description": "Éléments décoratifs style dessiné à la main pour ajouter du fun à votre design",
       "features": {
         "1": "Plus de 100 éléments dessinés à la main"
       }

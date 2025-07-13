@@ -133,7 +133,7 @@ function Home() {
         />
         <meta name="theme-color" content="#fffefc" />
         <meta name="keywords" content={t('siteKeywords')} />
-        <meta name="author" content="Notion Avatar Maker" />
+        <meta name="author" content="Avatar Maker" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,7 +240,7 @@ function Home() {
 
         {/* Additional SEO meta tags */}
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Notion Avatar" />
+        <meta name="apple-mobile-web-app-title" content="Avatar Maker" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-tap-highlight" content="no" />

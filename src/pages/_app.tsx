@@ -8,7 +8,7 @@ import { appWithTranslation } from 'next-i18next';
 import { Toaster } from 'react-hot-toast';
 import * as ga from '../lib/ga';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const AnyComponent = Component as any;
 
@@ -32,6 +32,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Toaster />
     </>
   );
-};
+}
 
 export default appWithTranslation(MyApp);

@@ -21,9 +21,9 @@ export default function SocialDemo() {
         url: window.location.origin,
       });
       setRepostCount((prev) => prev + 1);
-    } catch (err) {
+    } catch {
       // 如果浏览器不支持分享API或用户取消分享，静默失败
-      throw new Error('Share failed');
+      // Do nothing
     }
   };
 
