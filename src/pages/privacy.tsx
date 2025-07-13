@@ -1,18 +1,18 @@
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
 export default function Privacy() {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
-        <title>Privacy Policy - Avatify</title>
-        <meta
-          name="description"
-          content="Privacy Policy for Avatify - Learn how we protect your data and privacy when using our avatar generation service."
-        />
+        <title>{t('privacyPageTitle')}</title>
+        <meta name="description" content={t('privacyPageDescription')} />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -22,52 +22,47 @@ export default function Privacy() {
         <main className="max-w-4xl mx-auto px-4 py-16">
           <div className="prose prose-lg max-w-none">
             <h1 className="text-4xl font-bold text-gray-900 mb-8">
-              Privacy Policy
+              {t('privacyHeading')}
             </h1>
 
             <p className="text-gray-600 mb-8">
-              Last updated: {new Date().toLocaleDateString()}
+              {t('privacyLastUpdated')} {new Date().toLocaleDateString()}
             </p>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Introduction
+                {t('privacyIntroTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Welcome to Avatify. We respect your privacy and are committed to
-                protecting your personal data. This privacy policy explains how
-                we collect, use, and protect your information when you use our
-                avatar generation service.
+                {t('privacyIntroText')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Information We Collect
+                {t('privacyInfoCollectTitle')}
               </h2>
               <div className="space-y-4">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    Information You Provide
+                    {t('privacyInfoProvideTitle')}
                   </h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Avatar customization preferences</li>
-                    <li>
-                      Generated avatar data (processed locally in your browser)
-                    </li>
-                    <li>Feedback and support communications</li>
+                    <li>{t('privacyInfoProvide1')}</li>
+                    <li>{t('privacyInfoProvide2')}</li>
+                    <li>{t('privacyInfoProvide3')}</li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    Automatically Collected Information
+                    {t('privacyAutoCollectTitle')}
                   </h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Usage analytics and website performance data</li>
-                    <li>Browser type and version</li>
-                    <li>Device information and screen resolution</li>
-                    <li>IP address (anonymized)</li>
+                    <li>{t('privacyAutoCollect1')}</li>
+                    <li>{t('privacyAutoCollect2')}</li>
+                    <li>{t('privacyAutoCollect3')}</li>
+                    <li>{t('privacyAutoCollect4')}</li>
                   </ul>
                 </div>
               </div>
@@ -75,83 +70,70 @@ export default function Privacy() {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                How We Use Your Information
+                {t('privacyUseInfoTitle')}
               </h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>To provide and improve our avatar generation service</li>
-                <li>To analyze usage patterns and optimize performance</li>
-                <li>To respond to your inquiries and provide support</li>
-                <li>To ensure the security and integrity of our service</li>
+                <li>{t('privacyUseInfo1')}</li>
+                <li>{t('privacyUseInfo2')}</li>
+                <li>{t('privacyUseInfo3')}</li>
+                <li>{t('privacyUseInfo4')}</li>
               </ul>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Data Processing
+                {t('privacyDataProcessTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Avatify processes avatar generation entirely in your browser. We
-                do not store or transmit your avatar designs to our servers
-                unless you explicitly choose to share them. All avatar
-                customization happens locally on your device.
+                {t('privacyDataProcessText')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Data Sharing
+                {t('privacyDataSharingTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                We do not sell, trade, or share your personal information with
-                third parties, except as described in this privacy policy or
-                with your explicit consent. We may share anonymized, aggregated
-                data for analytics purposes.
+                {t('privacyDataSharingText')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Cookies and Tracking
+                {t('privacyCookiesTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                We use essential cookies to provide basic functionality and
-                improve your experience. We may use analytics tools to
-                understand how our service is used, but all data is anonymized
-                and aggregated.
+                {t('privacyCookiesText')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Your Rights
+                {t('privacyRightsTitle')}
               </h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>Access to your personal data</li>
-                <li>Correction of inaccurate data</li>
-                <li>Deletion of your data</li>
-                <li>Opt-out of non-essential data processing</li>
+                <li>{t('privacyRights1')}</li>
+                <li>{t('privacyRights2')}</li>
+                <li>{t('privacyRights3')}</li>
+                <li>{t('privacyRights4')}</li>
               </ul>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Security
+                {t('privacySecurityTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                We implement appropriate technical and organizational measures
-                to protect your personal data against unauthorized access,
-                alteration, disclosure, or destruction.
+                {t('privacySecurityText')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Contact Us
+                {t('privacyContactTitle')}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                If you have any questions about this Privacy Policy or our data
-                practices, please contact us through our contact page or via the
-                social media links in our footer.
+                {t('privacyContactText')}
               </p>
             </section>
           </div>

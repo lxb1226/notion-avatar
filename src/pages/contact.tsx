@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,6 +8,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 export default function Contact() {
+  const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,11 +47,8 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact Us - Avatify</title>
-        <meta
-          name="description"
-          content="Get in touch with the Avatify team. We'd love to hear your feedback, questions, or feature requests."
-        />
+        <title>{t('contactPageTitle')}</title>
+        <meta name="description" content={t('contactPageDescription')} />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -59,12 +58,9 @@ export default function Contact() {
         <main className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Contact Us
+              {t('contactHeading')}
             </h1>
-            <p className="text-xl text-gray-600">
-              We&apos;d love to hear from you. Send us a message and we&apos;ll
-              respond as soon as possible.
-            </p>
+            <p className="text-xl text-gray-600">{t('contactSubheading')}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -74,18 +70,17 @@ export default function Contact() {
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-8 text-center">
                   <div className="text-green-600 text-5xl mb-4">✓</div>
                   <h3 className="text-2xl font-bold text-green-800 mb-2">
-                    Thank you for your message!
+                    {t('contactFormSuccessTitle')}
                   </h3>
                   <p className="text-green-700">
-                    We&apos;ve received your message and will get back to you
-                    soon.
+                    {t('contactFormSuccessMessage')}
                   </p>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
                     className="mt-4 text-green-600 hover:text-green-800 font-medium"
                   >
-                    Send another message
+                    {t('contactFormSuccessButton')}
                   </button>
                 </div>
               ) : (
@@ -95,7 +90,7 @@ export default function Contact() {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Name *
+                      {t('contactFormName')} *
                     </label>
                     <input
                       type="text"
@@ -105,7 +100,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-black focus:outline-none transition-colors"
-                      placeholder="Your full name"
+                      placeholder={t('contactFormNamePlaceholder')}
                     />
                   </div>
 
@@ -114,7 +109,7 @@ export default function Contact() {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Email *
+                      {t('contactFormEmail')} *
                     </label>
                     <input
                       type="email"
@@ -124,7 +119,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-black focus:outline-none transition-colors"
-                      placeholder="your.email@example.com"
+                      placeholder={t('contactFormEmailPlaceholder')}
                     />
                   </div>
 
@@ -133,7 +128,7 @@ export default function Contact() {
                       htmlFor="subject"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Subject *
+                      {t('contactFormSubject')} *
                     </label>
                     <select
                       id="subject"
@@ -143,13 +138,17 @@ export default function Contact() {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-black focus:outline-none transition-colors"
                     >
-                      <option value="">Select a subject</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="bug">Bug Report</option>
-                      <option value="feature">Feature Request</option>
-                      <option value="feedback">Feedback</option>
-                      <option value="business">Business/Partnership</option>
-                      <option value="other">Other</option>
+                      <option value="">{t('contactFormSelectSubject')}</option>
+                      <option value="general">{t('contactFormGeneral')}</option>
+                      <option value="bug">{t('contactFormBug')}</option>
+                      <option value="feature">{t('contactFormFeature')}</option>
+                      <option value="feedback">
+                        {t('contactFormFeedback')}
+                      </option>
+                      <option value="business">
+                        {t('contactFormBusiness')}
+                      </option>
+                      <option value="other">{t('contactFormOther')}</option>
                     </select>
                   </div>
 
@@ -158,7 +157,7 @@ export default function Contact() {
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Message *
+                      {t('contactFormMessage')} *
                     </label>
                     <textarea
                       id="message"
@@ -168,7 +167,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-black focus:outline-none transition-colors resize-vertical"
-                      placeholder="Tell us how we can help you..."
+                      placeholder={t('contactFormMessagePlaceholder')}
                     />
                   </div>
 
@@ -177,7 +176,9 @@ export default function Contact() {
                     disabled={isSubmitting}
                     className="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting
+                      ? t('contactFormSubmitting')
+                      : t('contactFormSubmit')}
                   </button>
                 </form>
               )}
@@ -187,7 +188,7 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Other Ways to Reach Us
+                  {t('contactOtherWays')}
                 </h2>
 
                 <div className="space-y-6">
@@ -207,10 +208,10 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Social Media
+                        {t('contactSocialMediaTitle')}
                       </h3>
                       <p className="text-gray-600 mb-2">
-                        Follow us for updates and announcements:
+                        {t('contactSocialMediaDesc')}
                       </p>
                       {/* <div className="flex space-x-4">
                         <a
@@ -219,7 +220,7 @@ export default function Contact() {
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-800 font-medium"
                         >
-                          Twitter/X
+                          {t('contactTwitter')}
                         </a>
                         <a
                           href="https://dribbble.com/phillzou"
@@ -227,7 +228,7 @@ export default function Contact() {
                           rel="noopener noreferrer"
                           className="text-pink-600 hover:text-pink-800 font-medium"
                         >
-                          Dribbble
+                          {t('contactDribbble')}
                         </a>
                       </div> */}
                     </div>
@@ -245,11 +246,10 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Response Time
+                        {t('contactResponseTitle')}
                       </h3>
                       <p className="text-gray-600">
-                        We typically respond to messages within 24-48 hours
-                        during business days.
+                        {t('contactResponseDesc')}
                       </p>
                     </div>
                   </div>
@@ -269,16 +269,17 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">FAQ</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        {t('contactFaqTitle')}
+                      </h3>
                       <p className="text-gray-600 mb-2">
-                        Check our FAQ page for quick answers to common
-                        questions.
+                        {t('contactFaqDesc')}
                       </p>
                       <Link
                         href="/faq"
                         className="text-blue-600 hover:text-blue-800 font-medium"
                       >
-                        View FAQ →
+                        {t('contactFaqLink')}
                       </Link>
                     </div>
                   </div>

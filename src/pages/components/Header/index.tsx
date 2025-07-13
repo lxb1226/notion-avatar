@@ -12,14 +12,6 @@ export default function Header() {
   const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
     { code: 'zh', name: '简体中文', flag: '🇨🇳' },
-    { code: 'zh-TW', name: '繁體中文', flag: '🇹🇼' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-    { code: 'pt', name: 'Português', flag: '🇵🇹' },
   ];
 
   const currentLanguage =
