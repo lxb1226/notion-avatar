@@ -76,7 +76,7 @@ function generateId(slug: string, publishedAt: string): string {
 // 获取指定语言的所有博客文章文件路径
 async function getBlogFilePaths(locale: string = 'en'): Promise<string[]> {
   const contentDir = path.join(CONTENT_PATH, locale);
-  
+
   if (!fs.existsSync(contentDir)) {
     return [];
   }
@@ -95,9 +95,7 @@ async function getBlogFilePaths(locale: string = 'en'): Promise<string[]> {
 function getSlugFromFilePath(filePath: string, locale: string): string {
   const contentDir = path.join(CONTENT_PATH, locale);
   const relativePath = path.relative(contentDir, filePath);
-  const slug = relativePath
-    .replace(/\.(md|mdx)$/, '')
-    .replace(/\\/g, '/'); // 处理 Windows 路径
+  const slug = relativePath.replace(/\.(md|mdx)$/, '').replace(/\\/g, '/'); // 处理 Windows 路径
   return slug;
 }
 
@@ -111,10 +109,10 @@ async function readMDXFile(filePath: string): Promise<{
   try {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
-    
+
     // 从文件路径推断语言和 slug
     const pathParts = filePath.split(path.sep);
-    const localeIndex = pathParts.findIndex(part => part === 'blog') + 1;
+    const localeIndex = pathParts.findIndex((part) => part === 'blog') + 1;
     const locale = pathParts[localeIndex] || 'en';
     const slug = getSlugFromFilePath(filePath, locale);
 
@@ -128,7 +126,7 @@ async function readMDXFile(filePath: string): Promise<{
       frontmatter: data as BlogPostFrontmatter,
       content,
       slug,
-      locale
+      locale,
     };
   } catch (error) {
     console.error(`Error reading MDX file ${filePath}:`, error);
@@ -144,10 +142,10 @@ async function mdxToBlogPost(
     slug: string;
     locale: string;
   },
-  includeContent: boolean = false
+  includeContent: boolean = false,
 ): Promise<BlogPost> {
   const { frontmatter, content, slug } = mdxData;
-  
+
   const post: BlogPost = {
     id: generateId(slug, frontmatter.publishedAt),
     slug,
@@ -200,7 +198,8 @@ export async function getBlogPosts(locale: string = 'en'): Promise<BlogPost[]> {
 
     // 按发布时间排序
     return posts.sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
   } catch (error) {
     console.error(`Error getting blog posts for locale ${locale}:`, error);
@@ -209,7 +208,9 @@ export async function getBlogPosts(locale: string = 'en'): Promise<BlogPost[]> {
 }
 
 // 获取优化的博客文章列表（用于列表页面，减少数据量）
-export async function getOptimizedBlogPosts(locale: string = 'en'): Promise<Partial<BlogPost>[]> {
+export async function getOptimizedBlogPosts(
+  locale: string = 'en',
+): Promise<Partial<BlogPost>[]> {
   try {
     const filePaths = await getBlogFilePaths(locale);
     const posts: Partial<BlogPost>[] = [];
@@ -218,7 +219,7 @@ export async function getOptimizedBlogPosts(locale: string = 'en'): Promise<Part
       const mdxData = await readMDXFile(filePath);
       if (mdxData && mdxData.frontmatter.published !== false) {
         const { frontmatter, content, slug } = mdxData;
-        
+
         // 只返回列表页面需要的字段
         const optimizedPost: Partial<BlogPost> = {
           id: generateId(slug, frontmatter.publishedAt),
@@ -228,7 +229,7 @@ export async function getOptimizedBlogPosts(locale: string = 'en'): Promise<Part
           author: {
             name: frontmatter.author.name,
             avatar: frontmatter.author.avatar,
-            bio: frontmatter.author.bio
+            bio: frontmatter.author.bio,
           },
           publishedAt: frontmatter.publishedAt,
           readingTime: calculateReadingTime(content),
@@ -236,35 +237,41 @@ export async function getOptimizedBlogPosts(locale: string = 'en'): Promise<Part
           featuredImage: frontmatter.featuredImage,
           featured: frontmatter.featured || false,
         };
-        
+
         posts.push(optimizedPost);
       }
     }
 
     // 按发布时间排序
     return posts.sort(
-      (a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()
+      (a, b) =>
+        new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime(),
     );
   } catch (error) {
-    console.error(`Error getting optimized blog posts for locale ${locale}:`, error);
+    console.error(
+      `Error getting optimized blog posts for locale ${locale}:`,
+      error,
+    );
     return [];
   }
 }
 
 // 获取精选文章
-export async function getFeaturedPosts(locale: string = 'en'): Promise<BlogPost[]> {
+export async function getFeaturedPosts(
+  locale: string = 'en',
+): Promise<BlogPost[]> {
   const posts = await getBlogPosts(locale);
-  return posts.filter(post => post.featured);
+  return posts.filter((post) => post.featured);
 }
 
 // 获取单篇博客文章（包含内容）
 export async function getBlogPost(
   slug: string,
-  locale: string = 'en'
+  locale: string = 'en',
 ): Promise<BlogPost | null> {
   try {
     const filePaths = await getBlogFilePaths(locale);
-    
+
     for (const filePath of filePaths) {
       const fileSlug = getSlugFromFilePath(filePath, locale);
       if (fileSlug === slug) {
@@ -277,7 +284,10 @@ export async function getBlogPost(
 
     return null;
   } catch (error) {
-    console.error(`Error getting blog post ${slug} for locale ${locale}:`, error);
+    console.error(
+      `Error getting blog post ${slug} for locale ${locale}:`,
+      error,
+    );
     return null;
   }
 }
@@ -285,45 +295,49 @@ export async function getBlogPost(
 // 获取相关文章
 export async function getRelatedPosts(
   currentPost: BlogPost,
-  locale: string = 'en'
+  locale: string = 'en',
 ): Promise<BlogPost[]> {
   const posts = await getBlogPosts(locale);
   return posts
     .filter(
-      post =>
+      (post) =>
         post.id !== currentPost.id &&
         (post.category === currentPost.category ||
-          post.tags.some(tag => currentPost.tags.includes(tag)))
+          post.tags.some((tag) => currentPost.tags.includes(tag))),
     )
     .slice(0, 2);
 }
 
 // 获取博客分类
-export async function getBlogCategories(locale: string = 'en'): Promise<string[]> {
+export async function getBlogCategories(
+  locale: string = 'en',
+): Promise<string[]> {
   const posts = await getBlogPosts(locale);
-  return [...new Set(posts.map(post => post.category))];
+  return [...new Set(posts.map((post) => post.category))];
 }
 
 // 获取所有可用的 slug（用于静态生成）
-export async function getAllBlogSlugs(): Promise<Array<{ params: { slug: string }; locale: string }>> {
+export async function getAllBlogSlugs(): Promise<
+  Array<{ params: { slug: string }; locale: string }>
+> {
   const slugs: Array<{ params: { slug: string }; locale: string }> = [];
-  
+
   // 支持的语言
   const locales = ['en', 'zh'];
-  
+
   for (const locale of locales) {
     const filePaths = await getBlogFilePaths(locale);
-    
+
     for (const filePath of filePaths) {
       const mdxData = await readMDXFile(filePath);
       if (mdxData && mdxData.frontmatter.published !== false) {
         slugs.push({
           params: { slug: mdxData.slug },
-          locale
+          locale,
         });
       }
     }
   }
-  
+
   return slugs;
 }

@@ -20,24 +20,45 @@ interface BlogPostPageProps {
 
 // MDX 组件配置
 const mdxComponents = {
-  h1: (props: any) => <h1 className="text-3xl font-bold text-gray-900 mb-4" {...props} />,
-  h2: (props: any) => <h2 className="text-2xl font-bold text-gray-900 mb-3 mt-8" {...props} />,
-  h3: (props: any) => <h3 className="text-xl font-bold text-gray-900 mb-2 mt-6" {...props} />,
-  p: (props: any) => <p className="text-gray-700 mb-4 leading-relaxed" {...props} />,
-  ul: (props: any) => <ul className="list-disc list-inside mb-4 text-gray-700" {...props} />,
-  ol: (props: any) => <ol className="list-decimal list-inside mb-4 text-gray-700" {...props} />,
+  h1: (props: any) => (
+    <h1 className="text-3xl font-bold text-gray-900 mb-4" {...props} />
+  ),
+  h2: (props: any) => (
+    <h2 className="text-2xl font-bold text-gray-900 mb-3 mt-8" {...props} />
+  ),
+  h3: (props: any) => (
+    <h3 className="text-xl font-bold text-gray-900 mb-2 mt-6" {...props} />
+  ),
+  p: (props: any) => (
+    <p className="text-gray-700 mb-4 leading-relaxed" {...props} />
+  ),
+  ul: (props: any) => (
+    <ul className="list-disc list-inside mb-4 text-gray-700" {...props} />
+  ),
+  ol: (props: any) => (
+    <ol className="list-decimal list-inside mb-4 text-gray-700" {...props} />
+  ),
   li: (props: any) => <li className="mb-1" {...props} />,
   a: (props: any) => (
     <a className="text-blue-600 hover:text-blue-800 underline" {...props} />
   ),
   blockquote: (props: any) => (
-    <blockquote className="border-l-4 border-gray-300 pl-4 my-4 italic text-gray-600" {...props} />
+    <blockquote
+      className="border-l-4 border-gray-300 pl-4 my-4 italic text-gray-600"
+      {...props}
+    />
   ),
   code: (props: any) => (
-    <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono" {...props} />
+    <code
+      className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono"
+      {...props}
+    />
   ),
   pre: (props: any) => (
-    <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4" {...props} />
+    <pre
+      className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4"
+      {...props}
+    />
   ),
   img: (props: any) => (
     <div className="my-6">
@@ -60,12 +81,14 @@ export default function BlogPostPage({
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
-        <p className="text-gray-600">Loading...</p>
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
       </div>
-    </div>;
+    );
   }
 
   // 文章结构化数据
@@ -206,8 +229,7 @@ export default function BlogPostPage({
                 </p>
                 {post.updatedAt !== post.publishedAt && (
                   <p className="text-sm text-gray-500">
-                    {t('updatedOn')}{' '}
-                    {formatDate(post.updatedAt, router.locale)}
+                    {t('updatedOn')} {formatDate(post.updatedAt, router.locale)}
                   </p>
                 )}
               </div>
@@ -228,10 +250,7 @@ export default function BlogPostPage({
           {/* Article Content - MDX */}
           <article className="prose prose-lg max-w-none mb-12">
             {post.content && (
-              <MDXRemote
-                {...post.content}
-                components={mdxComponents}
-              />
+              <MDXRemote {...post.content} components={mdxComponents} />
             )}
           </article>
 

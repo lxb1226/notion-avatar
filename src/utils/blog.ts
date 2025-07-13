@@ -1,7 +1,7 @@
 // 统一的日期格式化函数，避免 hydration 错误
 export function formatDate(dateString: string, locale: string = 'en'): string {
   const date = new Date(dateString);
-  
+
   if (locale === 'zh' || locale === 'zh-TW') {
     return date.toLocaleDateString('zh-CN', {
       year: 'numeric',
@@ -9,7 +9,7 @@ export function formatDate(dateString: string, locale: string = 'en'): string {
       day: '2-digit',
     });
   }
-  
+
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',

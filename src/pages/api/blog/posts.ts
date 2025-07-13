@@ -11,12 +11,7 @@ export default async function handler(
   }
 
   try {
-    const {
-      locale = 'en',
-      offset = '0',
-      limit = '6',
-      category,
-    } = req.query;
+    const { locale = 'en', offset = '0', limit = '6', category } = req.query;
 
     const offsetNum = parseInt(offset as string, 10);
     const limitNum = parseInt(limit as string, 10);

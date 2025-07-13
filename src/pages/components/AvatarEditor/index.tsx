@@ -76,9 +76,11 @@ export default function AvatarEditor() {
       Object.keys(AvatarStyleCount).map(async (type) => {
         /* eslint-disable */
         const svgRaw = (
-          await require(`!!raw-loader!@/public/avatar/preview/${type}/${
-            config[type as AvatarPart]
-          }.svg`)
+          await require(
+            `!!raw-loader!@/public/avatar/preview/${type}/${
+              config[type as AvatarPart]
+            }.svg`,
+          )
         ).default;
         return `\n<g id="notion-avatar-${type}" ${
           type === 'face' ? 'fill="#ffffff"' : ''
@@ -91,7 +93,9 @@ export default function AvatarEditor() {
     // for festival
     if (festival) {
       const svgRaw = (
-        await require(`!!raw-loader!@/public/avatar/preview/festival/${festival}/${config[festival]}.svg`)
+        await require(
+          `!!raw-loader!@/public/avatar/preview/festival/${festival}/${config[festival]}.svg`,
+        )
       ).default;
       groups.push(`\n<g id="notion-avatar-${festival}" ${
         flipped ? 'transform="scale(-1,1) translate(-1080, 0)"' : ''
