@@ -7,6 +7,14 @@ export default function Footer() {
 
   const footerSections = [
     {
+      title: t('featuresTitle'),
+      links: [
+        { name: t('createCustomAvatars'), href: '/', internal: true },
+        { name: t('creativeAvatar.title'), href: '/creative-avatar', internal: true },
+        { name: t('blog'), href: '/blog', internal: true },
+      ],
+    },
+    {
       title: t('legal'),
       links: [
         { name: t('privacyPolicy'), href: '/privacy', internal: true },
@@ -25,9 +33,9 @@ export default function Footer() {
     <footer className="bg-gray-50 border-t-3 border-black">
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 md:col-span-3">
             <div className="mb-6">
               <h3 className="text-xl font-bold mb-4">{t('avatarMaker')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
