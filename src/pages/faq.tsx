@@ -80,12 +80,47 @@ export default function FAQ() {
     },
   ];
 
+  // FAQ页面结构化数据
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Head>
         <title>{t('faqPageTitle')}</title>
         <meta name="description" content={t('faqPageDescription')} />
+        <meta name="keywords" content={t('faqKeywords')} />
         <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={t('faqPageTitle')} />
+        <meta property="og:description" content={t('faqPageDescription')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.imgur.com/F5R0K03.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('faqPageTitle')} />
+        <meta name="twitter:description" content={t('faqPageDescription')} />
+        <meta name="twitter:image" content="https://i.imgur.com/F5R0K03.png" />
+
+        {/* FAQ页面结构化数据 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
       </Head>
 
       <div className="min-h-screen bg-white">

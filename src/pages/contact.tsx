@@ -49,7 +49,23 @@ export default function Contact() {
       <Head>
         <title>{t('contactPageTitle')}</title>
         <meta name="description" content={t('contactPageDescription')} />
+        <meta name="keywords" content={t('contactKeywords')} />
         <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={t('contactPageTitle')} />
+        <meta property="og:description" content={t('contactPageDescription')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.imgur.com/F5R0K03.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('contactPageTitle')} />
+        <meta
+          name="twitter:description"
+          content={t('contactPageDescription')}
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/F5R0K03.png" />
       </Head>
 
       <div className="min-h-screen bg-white">

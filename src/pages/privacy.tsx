@@ -13,7 +13,23 @@ export default function Privacy() {
       <Head>
         <title>{t('privacyPageTitle')}</title>
         <meta name="description" content={t('privacyPageDescription')} />
+        <meta name="keywords" content={t('privacyKeywords')} />
         <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={t('privacyPageTitle')} />
+        <meta property="og:description" content={t('privacyPageDescription')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.imgur.com/F5R0K03.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('privacyPageTitle')} />
+        <meta
+          name="twitter:description"
+          content={t('privacyPageDescription')}
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/F5R0K03.png" />
       </Head>
 
       <div className="min-h-screen bg-white">

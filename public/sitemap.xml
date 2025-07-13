@@ -3,19 +3,41 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://notion-avatar.app</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://notion-avatar.app/zh-TW"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://notion-avatar.app/ja"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://notion-avatar.app/ko"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notion-avatar.app/es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://notion-avatar.app/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://notion-avatar.app/de"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://notion-avatar.app/pt"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://notion-avatar.app/ru"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/faq</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/faq"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/contact</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/contact"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/privacy</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/privacy"/>
   </url>
 </urlset>

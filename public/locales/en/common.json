@@ -161,6 +161,9 @@
   "faqStillHaveQuestions": "Still have questions?",
   "faqContactDescription": "Can't find the answer you're looking for? Feel free to reach out to us.",
   "faqContactButton": "Contact Us",
+  "faqKeywords": "FAQ,frequently asked questions,avatar generator help,Avatify support,avatar creation guide,free avatar tool,avatar generator tutorial,avatar maker questions",
+  "privacyKeywords": "privacy policy,data protection,user privacy,Avatify privacy,data security,personal information protection,avatar generator privacy",
+  "contactKeywords": "contact us,customer support,technical support,Avatify contact,feedback,bug report,business inquiry,partnership",
   "chatDemo": {
     "message1": "Check out my new avatar!",
     "message2": "Wow, looks great! Where did you get it?",

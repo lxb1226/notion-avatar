@@ -177,46 +177,6 @@ function Home() {
         />
         <link
           rel="alternate"
-          hrefLang="zh-TW"
-          href="https://notion-avatar.app/zh-TW"
-        />
-        <link
-          rel="alternate"
-          hrefLang="ja"
-          href="https://notion-avatar.app/ja"
-        />
-        <link
-          rel="alternate"
-          hrefLang="ko"
-          href="https://notion-avatar.app/ko"
-        />
-        <link
-          rel="alternate"
-          hrefLang="es"
-          href="https://notion-avatar.app/es"
-        />
-        <link
-          rel="alternate"
-          hrefLang="fr"
-          href="https://notion-avatar.app/fr"
-        />
-        <link
-          rel="alternate"
-          hrefLang="de"
-          href="https://notion-avatar.app/de"
-        />
-        <link
-          rel="alternate"
-          hrefLang="ru"
-          href="https://notion-avatar.app/ru"
-        />
-        <link
-          rel="alternate"
-          hrefLang="pt"
-          href="https://notion-avatar.app/pt"
-        />
-        <link
-          rel="alternate"
           hrefLang="x-default"
           href="https://notion-avatar.app"
         />
@@ -228,7 +188,7 @@ function Home() {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link href="/fonts/Quicksand.tff" as="font" crossOrigin="anonymous" />
+        <link href="/fonts/Quicksand.ttf" as="font" crossOrigin="anonymous" />
 
         {/* Enhanced Schema.org markup */}
         <script
