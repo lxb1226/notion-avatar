@@ -71,7 +71,7 @@ export default function Header() {
                 {t('avatarMaker')}
               </h1>
               <p className="text-sm text-gray-600 hidden sm:block">
-                Create Custom Avatars
+                {t('createCustomAvatars')}
               </p>
             </div>
           </div>
@@ -160,8 +160,8 @@ export default function Header() {
                 height={18}
                 className="filter brightness-0 invert"
               />
-              <span className="hidden sm:inline">Start Creating</span>
-              <span className="sm:hidden">Create</span>
+              <span className="hidden sm:inline">{t('startCreating')}</span>
+              <span className="sm:hidden">{t('create')}</span>
             </button>
           </div>
         </div>

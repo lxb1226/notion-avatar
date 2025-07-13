@@ -1,15 +1,17 @@
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation('common');
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
     {
-      title: 'Legal',
+      title: t('legal'),
       links: [
-        { name: 'Privacy Policy', href: '/privacy', internal: true },
-        { name: 'FAQ', href: '/faq', internal: true },
-        { name: 'Contact', href: '/contact', internal: true },
+        { name: t('privacyPolicy'), href: '/privacy', internal: true },
+        { name: t('faq'), href: '/faq', internal: true },
+        { name: t('contactUs'), href: '/contact', internal: true },
         // {
         //   name: 'CC0 License',
         //   href: 'https://creativecommons.org/publicdomain/zero/1.0/',
@@ -27,11 +29,9 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-xl font-bold mb-4">Avatify</h3>
+              <h3 className="text-xl font-bold mb-4">{t('avatarMaker')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Create unique, hand-drawn style avatars for your social media
-                profiles, team directories, and personal branding. Free,
-                instant, and no registration required.
+                {t('footerDescription')}
               </p>
             </div>
             {/* <div className="flex space-x-3">
@@ -87,31 +87,11 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-600 text-center md:text-left">
-              <p>
-                &copy; {currentYear} Avatify. All rights reserved.{' '}
-                {/* <a
-                  href="https://abstractlab.gumroad.com/l/noto-avatar"
-                  className="hover:underline"
-                >
-                  Illustrations
-                </a>{' '}
-                designed by{' '}
-                <a href="https://x.com/felix12777" className="hover:underline">
-                  Felix Wong
-                </a>{' '}
-                under{' '} */}
-                {/* <a
-                  className="hover:underline"
-                  href="https://creativecommons.org/publicdomain/zero/1.0/"
-                >
-                  CC0 License
-                </a> */}
-                .
-              </p>
+              <p>{t('copyrightText', { year: currentYear })}.</p>
             </div>
 
             <div className="flex items-center space-x-4 text-sm text-gray-600">
-              <span>Made with ❤️ for creators worldwide</span>
+              <span>{t('madeWithLove')}</span>
             </div>
           </div>
         </div>
