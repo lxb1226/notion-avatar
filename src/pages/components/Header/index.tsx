@@ -1,4 +1,5 @@
 import Image from 'next/legacy/image';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState, useEffect, useRef } from 'react';
@@ -69,7 +70,29 @@ export default function Header() {
           </div>
 
           {/* Navigation/Action area */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
+            {/* Navigation Links */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <Link
+                href="/blog"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+              >
+                {t('blog')}
+              </Link>
+              <Link
+                href="/faq"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+              >
+                {t('faq')}
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+              >
+                {t('contactUs')}
+              </Link>
+            </nav>
+
             {/* Language switcher */}
             <div className="relative" ref={dropdownRef}>
               <button

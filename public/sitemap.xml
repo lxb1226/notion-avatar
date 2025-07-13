@@ -12,7 +12,47 @@
   </url>
   
   <url>
-    <loc>https://avatify.online/faq</loc>
+    <loc>https://notion-avatar.app/blog</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/blog"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/blog/professional-avatar-design-tips</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/blog/professional-avatar-design-tips"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/blog/professional-avatar-design-tips"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/blog/professional-avatar-design-tips"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/blog/psychology-of-colors-avatar-design</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/blog/psychology-of-colors-avatar-design"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/blog/psychology-of-colors-avatar-design"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/blog/psychology-of-colors-avatar-design"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/blog/avatar-trends-2025</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/blog/avatar-trends-2025"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/blog/avatar-trends-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/blog/avatar-trends-2025"/>
+  </url>
+  
+  <url>
+    <loc>https://notion-avatar.app/faq</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
