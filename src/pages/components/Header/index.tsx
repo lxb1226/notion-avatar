@@ -44,7 +44,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-6">
           {/* Logo and brand name section */}
-          <div className="flex items-center space-x-4">
+          <Link
+            href="/"
+            className="flex items-center space-x-4 hover:opacity-80 transition-opacity duration-200"
+          >
             {/* Logo with consistent styling */}
             <div className="relative">
               <div className="w-12 h-12 bg-white border-3 border-black rounded-full flex items-center justify-center p-2 shadow-sm">
@@ -67,7 +70,7 @@ export default function Header() {
                 {t('createCustomAvatars')}
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Navigation/Action area */}
           <div className="flex items-center space-x-6">
