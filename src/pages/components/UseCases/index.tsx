@@ -16,51 +16,51 @@ export default function UseCases() {
 
   const useCases: UseCase[] = [
     {
-      title: 'Professional Profiles',
-      description: 'Perfect for LinkedIn, resumes, and business cards',
+      title: t('useCaseProfessional'),
+      description: t('useCaseProfessionalDesc'),
       icon: '/icon/star.svg',
       color: 'bg-blue-50 border-blue-200',
       features: [
-        'LinkedIn profiles',
-        'Business cards',
-        'Email signatures',
-        'Company directories',
+        t('linkedinProfiles'),
+        t('businessCards'),
+        t('emailSignatures'),
+        t('companyDirectories'),
       ],
     },
     {
-      title: 'Social Media',
-      description: 'Stand out on Twitter, Instagram, and other platforms',
+      title: t('useCaseSocial'),
+      description: t('useCaseSocialDesc'),
       icon: '/icon/heart.svg',
       color: 'bg-pink-50 border-pink-200',
       features: [
-        'Twitter avatars',
-        'Instagram profiles',
-        'TikTok accounts',
-        'Discord servers',
+        t('twitterAvatars'),
+        t('instagramProfiles'),
+        t('tiktokAccounts'),
+        t('discordServers'),
       ],
     },
     {
-      title: 'Team Building',
-      description: 'Create consistent avatars for your entire team',
+      title: t('useCaseTeam'),
+      description: t('useCaseTeamDesc'),
       icon: '/icon/chat.svg',
       color: 'bg-green-50 border-green-200',
       features: [
-        'Team directories',
-        'Slack profiles',
-        'Project management',
-        'Company websites',
+        t('teamDirectories'),
+        t('slackProfiles'),
+        t('projectManagement'),
+        t('companyWebsites'),
       ],
     },
     {
-      title: 'Creative Projects',
-      description: 'For blogs, portfolios, and creative endeavors',
+      title: t('useCaseCreative'),
+      description: t('useCaseCreativeDesc'),
       icon: '/icon/palette.svg',
       color: 'bg-purple-50 border-purple-200',
       features: [
-        'Personal blogs',
-        'Portfolio sites',
-        'Creative profiles',
-        'Art communities',
+        t('personalBlogs'),
+        t('portfolioSites'),
+        t('creativeProfiles'),
+        t('artCommunities'),
       ],
     },
   ];
@@ -133,7 +133,7 @@ export default function UseCases() {
                 ))}
                 {useCase.features.length > 3 && (
                   <div className="text-xs text-gray-400">
-                    +{useCase.features.length - 3} more
+                    +{useCase.features.length - 3} {t('moreFeatures')}
                   </div>
                 )}
               </div>
@@ -145,10 +145,10 @@ export default function UseCases() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              See It In Action
+              {t('seeItInAction')}
             </h3>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Explore how custom avatars look in real-world scenarios
+              {t('seeItInActionDesc')}
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export default function UseCases() {
                     height={24}
                     alt="Chat"
                   />
-                  <h4 className="font-bold">Team Communication</h4>
+                  <h4 className="font-bold">{t('teamCommunication')}</h4>
                 </div>
                 <ChatDemo />
               </div>
@@ -177,7 +177,7 @@ export default function UseCases() {
                     height={24}
                     alt="Social"
                   />
-                  <h4 className="font-bold">Social Media Profile</h4>
+                  <h4 className="font-bold">{t('socialMediaProfile')}</h4>
                 </div>
                 <SocialDemo />
               </div>
@@ -187,7 +187,9 @@ export default function UseCases() {
 
         {/* Benefits Section */}
         <div className="bg-white border-3 border-black rounded-xl p-8 text-center">
-          <h3 className="text-xl font-bold mb-6">Why Choose Custom Avatars?</h3>
+          <h3 className="text-xl font-bold mb-6">
+            {t('whyChooseCustomAvatars')}
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-3">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
@@ -198,9 +200,9 @@ export default function UseCases() {
                   alt="Professional"
                 />
               </div>
-              <h4 className="font-bold">Professional Look</h4>
+              <h4 className="font-bold">{t('professionalLook')}</h4>
               <p className="text-sm text-gray-600">
-                Clean, consistent design that works across all platforms
+                {t('professionalLookDesc')}
               </p>
             </div>
             <div className="space-y-3">
@@ -212,10 +214,8 @@ export default function UseCases() {
                   alt="Unique"
                 />
               </div>
-              <h4 className="font-bold">Uniquely Yours</h4>
-              <p className="text-sm text-gray-600">
-                Hundreds of combinations to create your perfect avatar
-              </p>
+              <h4 className="font-bold">{t('uniquelyYours')}</h4>
+              <p className="text-sm text-gray-600">{t('uniquelyYoursDesc')}</p>
             </div>
             <div className="space-y-3">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto">
@@ -226,10 +226,8 @@ export default function UseCases() {
                   alt="Ready"
                 />
               </div>
-              <h4 className="font-bold">Ready to Use</h4>
-              <p className="text-sm text-gray-600">
-                Download in multiple formats, perfect for any platform
-              </p>
+              <h4 className="font-bold">{t('readyToUse')}</h4>
+              <p className="text-sm text-gray-600">{t('readyToUseDesc')}</p>
             </div>
           </div>
         </div>
