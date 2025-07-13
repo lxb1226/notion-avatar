@@ -85,5 +85,93 @@
         "1": "Plus de 100 éléments dessinés à la main"
       }
     }
+  },
+  "creativeAvatar": {
+    "pageTitle": "Générateur d'Avatar Créatif - Avatars IA Uniques | Avatify",
+    "pageDescription": "Créez des avatars uniques et artistiques avec notre générateur IA créatif. Générez des avatars aléatoires et accrocheurs parfaits pour le gaming, les réseaux sociaux et les projets d'art numérique.",
+    "keywords": "avatar créatif,avatar unique,générateur avatar IA,avatar aléatoire,avatar artistique,avatar gaming,avatar art numérique,personnage personnalisé",
+    "title": "Générateur d'Avatar Créatif",
+    "subtitle": "Générez des avatars uniques et artistiques avec une touche créative. Parfait pour les profils gaming, les réseaux sociaux et les projets d'art numérique.",
+    "feature": {
+      "unique": "Designs Uniques",
+      "artistic": "Style Artistique",
+      "instant": "Génération Instantanée",
+      "random": "Création Aléatoire"
+    },
+    "what": {
+      "title": "Qu'est-ce qu'Avatar Créatif ?",
+      "description": "Avatar Créatif est un générateur alimenté par IA qui crée des avatars uniques et artistiques avec des designs non conventionnels et des couleurs vibrantes.",
+      "point1": "Les algorithmes mathématiques garantissent que chaque avatar est vraiment unique",
+      "point2": "Design artistique avec des couleurs audacieuses et des formes créatives",
+      "point3": "Parfait pour exprimer la créativité et se démarquer"
+    },
+    "howTo": {
+      "title": "Comment Utiliser",
+      "step1": {
+        "title": "Générer un Avatar",
+        "description": "Cliquez sur le bouton générer ou appuyez sur Espace pour créer un nouvel avatar"
+      },
+      "step2": {
+        "title": "Personnaliser et Explorer",
+        "description": "Continuez à générer jusqu'à trouver le design créatif parfait"
+      },
+      "step3": {
+        "title": "Télécharger et Utiliser",
+        "description": "Sauvegardez votre avatar en PNG et utilisez-le où vous voulez"
+      }
+    },
+    "features": {
+      "title": "Fonctionnalités Créatives",
+      "artistic": {
+        "title": "Design Artistique",
+        "description": "Style unique dessiné à la main avec des éléments créatifs"
+      },
+      "random": {
+        "title": "Génération Aléatoire",
+        "description": "Chaque avatar est complètement unique et imprévisible"
+      },
+      "colorful": {
+        "title": "Couleurs Vibrantes",
+        "description": "Palettes de couleurs audacieuses incluant des effets arc-en-ciel"
+      },
+      "fast": {
+        "title": "Création Instantanée",
+        "description": "Générez de nouveaux avatars en millisecondes"
+      }
+    },
+    "examples": {
+      "title": "Parfait Pour",
+      "subtitle": "Les avatars créatifs fonctionnent parfaitement dans de nombreux scénarios",
+      "gaming": {
+        "title": "Profils Gaming",
+        "description": "Démarquez-vous dans les jeux et les communautés gaming avec des avatars uniques"
+      },
+      "social": {
+        "title": "Réseaux Sociaux",
+        "description": "Exprimez votre côté créatif sur les plateformes sociales"
+      },
+      "art": {
+        "title": "Art Numérique",
+        "description": "Utilisez comme inspiration ou éléments dans vos projets artistiques"
+      }
+    },
+    "cta": {
+      "title": "Besoin de Quelque Chose de Plus Professionnel ?",
+      "description": "Essayez notre générateur d'avatar professionnel pour les profils d'entreprise et les cas d'usage formels.",
+      "professional": "Avatars Professionnels",
+      "blog": "Blog Design"
+    },
+    "generate": "Générer Nouveau",
+    "download": "Télécharger PNG",
+    "generating": "Génération...",
+    "shortcutGenerate": "Générer",
+    "shortcutSave": "Sauvegarder",
+    "avatarInfo": "Informations Avatar",
+    "hairType": "Style de Cheveux",
+    "mouthType": "Style de Bouche",
+    "noseType": "Style de Nez",
+    "specialHair": "Cheveux Spéciaux",
+    "rainbow": "Arc-en-ciel",
+    "normal": "Normal"
   }
 }

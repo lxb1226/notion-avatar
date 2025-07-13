@@ -77,6 +77,12 @@ export default function Header() {
             {/* Navigation Links */}
             <nav className="hidden md:flex items-center space-x-6">
               <Link
+                href="/creative-avatar"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+              >
+                {t('creativeAvatar.title')}
+              </Link>
+              <Link
                 href="/blog"
                 className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
               >

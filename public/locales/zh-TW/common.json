@@ -85,5 +85,93 @@
         "1": "100+ 手繪裝飾元素"
       }
     }
+  },
+  "creativeAvatar": {
+    "pageTitle": "創意頭像生成器 - 獨特AI頭像 | Avatify",
+    "pageDescription": "使用我們的創意AI生成器創建獨特、藝術性的頭像。生成適合遊戲、社交媒體和數位藝術專案的隨機、引人注目的頭像。",
+    "keywords": "創意頭像,獨特頭像,AI頭像生成器,隨機頭像,藝術頭像,遊戲頭像,數位藝術頭像,自定義角色",
+    "title": "創意頭像生成器",
+    "subtitle": "生成具有創意風格的獨特、藝術性頭像。適合遊戲檔案、社交媒體和數位藝術專案。",
+    "feature": {
+      "unique": "獨特設計",
+      "artistic": "藝術風格",
+      "instant": "即時生成",
+      "random": "隨機創建"
+    },
+    "what": {
+      "title": "什麼是創意頭像？",
+      "description": "創意頭像是一個AI驅動的生成器，使用非常規設計和鮮豔色彩創建獨特、藝術性的頭像。",
+      "point1": "數學演算法確保每個頭像都是真正獨特的",
+      "point2": "採用大膽色彩和創意形狀的藝術設計",
+      "point3": "完美表達創意並脫穎而出"
+    },
+    "howTo": {
+      "title": "使用方法",
+      "step1": {
+        "title": "生成頭像",
+        "description": "點擊生成按鈕或按空格鍵創建新頭像"
+      },
+      "step2": {
+        "title": "自定義和探索",
+        "description": "持續生成直到找到完美的創意設計"
+      },
+      "step3": {
+        "title": "下載和使用",
+        "description": "將頭像保存為PNG格式，隨處使用"
+      }
+    },
+    "features": {
+      "title": "創意功能",
+      "artistic": {
+        "title": "藝術設計",
+        "description": "具有創意元素的獨特手繪風格"
+      },
+      "random": {
+        "title": "隨機生成",
+        "description": "每個頭像都是完全獨特且不可預測的"
+      },
+      "colorful": {
+        "title": "鮮豔色彩",
+        "description": "包括彩虹效果的大膽色彩調色盤"
+      },
+      "fast": {
+        "title": "即時創建",
+        "description": "在毫秒內生成新頭像"
+      }
+    },
+    "examples": {
+      "title": "完美適用於",
+      "subtitle": "創意頭像在許多場景中都表現出色",
+      "gaming": {
+        "title": "遊戲檔案",
+        "description": "在遊戲和遊戲社群中以獨特頭像脫穎而出"
+      },
+      "social": {
+        "title": "社交媒體",
+        "description": "在社交平台上表達您的創意一面"
+      },
+      "art": {
+        "title": "數位藝術",
+        "description": "用作藝術專案的靈感或元素"
+      }
+    },
+    "cta": {
+      "title": "需要更專業的東西？",
+      "description": "試試我們的專業頭像生成器，適用於商業檔案和正式用途。",
+      "professional": "專業頭像",
+      "blog": "設計部落格"
+    },
+    "generate": "生成新的",
+    "download": "下載PNG",
+    "generating": "生成中...",
+    "shortcutGenerate": "生成",
+    "shortcutSave": "保存",
+    "avatarInfo": "頭像資訊",
+    "hairType": "髮型",
+    "mouthType": "嘴型",
+    "noseType": "鼻型",
+    "specialHair": "特殊髮型",
+    "rainbow": "彩虹",
+    "normal": "普通"
   }
 }

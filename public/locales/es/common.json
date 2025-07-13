@@ -81,5 +81,93 @@
         "1": "Más de 100 elementos dibujados a mano"
       }
     }
+  },
+  "creativeAvatar": {
+    "pageTitle": "Generador de Avatar Creativo - Avatares IA Únicos | Avatify",
+    "pageDescription": "Crea avatares únicos y artísticos con nuestro generador IA creativo. Genera avatares aleatorios y llamativos perfectos para gaming, redes sociales y proyectos de arte digital.",
+    "keywords": "avatar creativo,avatar único,generador avatar IA,avatar aleatorio,avatar artístico,avatar gaming,avatar arte digital,personaje personalizado",
+    "title": "Generador de Avatar Creativo",
+    "subtitle": "Genera avatares únicos y artísticos con un toque creativo. Perfecto para perfiles de gaming, redes sociales y proyectos de arte digital.",
+    "feature": {
+      "unique": "Diseños Únicos",
+      "artistic": "Estilo Artístico",
+      "instant": "Generación Instantánea",
+      "random": "Creación Aleatoria"
+    },
+    "what": {
+      "title": "¿Qué es Avatar Creativo?",
+      "description": "Avatar Creativo es un generador impulsado por IA que crea avatares únicos y artísticos con diseños no convencionales y colores vibrantes.",
+      "point1": "Los algoritmos matemáticos garantizan que cada avatar sea verdaderamente único",
+      "point2": "Diseño artístico con colores audaces y formas creativas",
+      "point3": "Perfecto para expresar creatividad y destacar"
+    },
+    "howTo": {
+      "title": "Cómo Usar",
+      "step1": {
+        "title": "Generar Avatar",
+        "description": "Haz clic en el botón generar o presiona Espacio para crear un nuevo avatar"
+      },
+      "step2": {
+        "title": "Personalizar y Explorar",
+        "description": "Continúa generando hasta encontrar el diseño creativo perfecto"
+      },
+      "step3": {
+        "title": "Descargar y Usar",
+        "description": "Guarda tu avatar como PNG y úsalo donde quieras"
+      }
+    },
+    "features": {
+      "title": "Características Creativas",
+      "artistic": {
+        "title": "Diseño Artístico",
+        "description": "Estilo único dibujado a mano con elementos creativos"
+      },
+      "random": {
+        "title": "Generación Aleatoria",
+        "description": "Cada avatar es completamente único e impredecible"
+      },
+      "colorful": {
+        "title": "Colores Vibrantes",
+        "description": "Paletas de colores audaces incluyendo efectos de arcoíris"
+      },
+      "fast": {
+        "title": "Creación Instantánea",
+        "description": "Genera nuevos avatares en milisegundos"
+      }
+    },
+    "examples": {
+      "title": "Perfecto Para",
+      "subtitle": "Los avatares creativos funcionan genial en muchos escenarios",
+      "gaming": {
+        "title": "Perfiles de Gaming",
+        "description": "Destaca en juegos y comunidades gaming con avatares únicos"
+      },
+      "social": {
+        "title": "Redes Sociales",
+        "description": "Expresa tu lado creativo en plataformas sociales"
+      },
+      "art": {
+        "title": "Arte Digital",
+        "description": "Usa como inspiración o elementos en tus proyectos artísticos"
+      }
+    },
+    "cta": {
+      "title": "¿Necesitas Algo Más Profesional?",
+      "description": "Prueba nuestro generador de avatar profesional para perfiles de negocios y casos de uso formales.",
+      "professional": "Avatares Profesionales",
+      "blog": "Blog de Diseño"
+    },
+    "generate": "Generar Nuevo",
+    "download": "Descargar PNG",
+    "generating": "Generando...",
+    "shortcutGenerate": "Generar",
+    "shortcutSave": "Guardar",
+    "avatarInfo": "Información del Avatar",
+    "hairType": "Estilo de Cabello",
+    "mouthType": "Estilo de Boca",
+    "noseType": "Estilo de Nariz",
+    "specialHair": "Cabello Especial",
+    "rainbow": "Arcoíris",
+    "normal": "Normal"
   }
 }

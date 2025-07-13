@@ -319,5 +319,93 @@
   "portfolioSites": "作品集网站",
   "creativeProfiles": "创意档案",
   "artCommunities": "艺术社区",
-  "moreFeatures": "更多"
+  "moreFeatures": "更多",
+  "creativeAvatar": {
+    "pageTitle": "创意头像生成器 - 独特AI头像制作工具 | Avatify",
+    "pageDescription": "使用我们的创意AI生成器制作独特、艺术性的头像。生成随机、引人注目的头像，完美适用于游戏、社交媒体和数字艺术项目。",
+    "keywords": "创意头像,独特头像,AI头像生成器,随机头像,艺术头像,游戏头像,数字艺术头像,自定义角色",
+    "title": "创意头像生成器",
+    "subtitle": "生成独特的艺术风格头像，带有创意的扭曲效果。完美适用于游戏档案、社交媒体和数字艺术项目。",
+    "feature": {
+      "unique": "独特设计",
+      "artistic": "艺术风格",
+      "instant": "即时生成",
+      "random": "随机创作"
+    },
+    "what": {
+      "title": "什么是创意头像？",
+      "description": "创意头像是一个AI驱动的生成器，能够创建具有非传统设计和鲜艳色彩的独特艺术头像。",
+      "point1": "数学算法确保每个头像都是真正独特的",
+      "point2": "艺术设计，采用大胆的颜色和创意形状",
+      "point3": "完美表达创造力，让你脱颖而出"
+    },
+    "howTo": {
+      "title": "使用方法",
+      "step1": {
+        "title": "生成头像",
+        "description": "点击生成按钮或按空格键创建新头像"
+      },
+      "step2": {
+        "title": "自定义和探索",
+        "description": "继续生成直到找到完美的创意设计"
+      },
+      "step3": {
+        "title": "下载和使用",
+        "description": "将头像保存为PNG格式，随时随地使用"
+      }
+    },
+    "features": {
+      "title": "创意特色",
+      "artistic": {
+        "title": "艺术设计",
+        "description": "独特的手绘风格，包含创意元素"
+      },
+      "random": {
+        "title": "随机生成",
+        "description": "每个头像都是完全独特且不可预测的"
+      },
+      "colorful": {
+        "title": "鲜艳色彩",
+        "description": "大胆的色彩调色板，包括彩虹效果"
+      },
+      "fast": {
+        "title": "即时创建",
+        "description": "在毫秒内生成新头像"
+      }
+    },
+    "examples": {
+      "title": "完美适用于",
+      "subtitle": "创意头像在许多场景中都表现出色",
+      "gaming": {
+        "title": "游戏档案",
+        "description": "在游戏和游戏社区中用独特头像脱颖而出"
+      },
+      "social": {
+        "title": "社交媒体",
+        "description": "在社交平台上表达你的创意一面"
+      },
+      "art": {
+        "title": "数字艺术",
+        "description": "用作艺术项目的灵感或元素"
+      }
+    },
+    "cta": {
+      "title": "需要更专业的头像？",
+      "description": "试试我们的专业头像生成器，适用于商务档案和正式场合。",
+      "professional": "专业头像",
+      "blog": "设计博客"
+    },
+    "generate": "生成新头像",
+    "download": "下载PNG",
+    "generating": "生成中...",
+    "shortcutGenerate": "生成",
+    "shortcutSave": "保存",
+    "avatarInfo": "头像信息",
+    "hairType": "发型",
+    "mouthType": "嘴型",
+    "noseType": "鼻型",
+    "specialHair": "特殊发型",
+    "rainbow": "彩虹",
+    "normal": "普通"
+  }
 }

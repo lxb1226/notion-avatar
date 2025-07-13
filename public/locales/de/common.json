@@ -85,5 +85,93 @@
         "1": "Über 100 handgezeichnete Elemente"
       }
     }
+  },
+  "creativeAvatar": {
+    "pageTitle": "Kreativer Avatar Generator - Einzigartige KI-Avatare | Avatify",
+    "pageDescription": "Erstelle einzigartige, künstlerische Avatare mit unserem kreativen KI-Generator. Generiere zufällige, auffällige Avatare perfekt für Gaming, soziale Medien und digitale Kunstprojekte.",
+    "keywords": "kreativer avatar,einzigartiger avatar,KI avatar generator,zufälliger avatar,künstlerischer avatar,gaming avatar,digitaler kunst avatar,benutzerdefinierter charakter",
+    "title": "Kreativer Avatar Generator",
+    "subtitle": "Generiere einzigartige, künstlerische Avatare mit kreativem Touch. Perfekt für Gaming-Profile, soziale Medien und digitale Kunstprojekte.",
+    "feature": {
+      "unique": "Einzigartige Designs",
+      "artistic": "Künstlerischer Stil",
+      "instant": "Sofortige Erstellung",
+      "random": "Zufällige Kreation"
+    },
+    "what": {
+      "title": "Was ist Kreativer Avatar?",
+      "description": "Kreativer Avatar ist ein KI-betriebener Generator, der einzigartige, künstlerische Avatare mit unkonventionellen Designs und lebendigen Farben erstellt.",
+      "point1": "Mathematische Algorithmen stellen sicher, dass jeder Avatar wirklich einzigartig ist",
+      "point2": "Künstlerisches Design mit kräftigen Farben und kreativen Formen",
+      "point3": "Perfekt um Kreativität auszudrücken und aufzufallen"
+    },
+    "howTo": {
+      "title": "Wie Verwenden",
+      "step1": {
+        "title": "Avatar Generieren",
+        "description": "Klicke den Generieren-Button oder drücke Leertaste um einen neuen Avatar zu erstellen"
+      },
+      "step2": {
+        "title": "Anpassen und Erkunden",
+        "description": "Generiere weiter bis du das perfekte kreative Design findest"
+      },
+      "step3": {
+        "title": "Herunterladen und Verwenden",
+        "description": "Speichere deinen Avatar als PNG und verwende ihn überall"
+      }
+    },
+    "features": {
+      "title": "Kreative Features",
+      "artistic": {
+        "title": "Künstlerisches Design",
+        "description": "Einzigartiger handgezeichneter Stil mit kreativen Elementen"
+      },
+      "random": {
+        "title": "Zufällige Generierung",
+        "description": "Jeder Avatar ist vollständig einzigartig und unvorhersagbar"
+      },
+      "colorful": {
+        "title": "Lebendige Farben",
+        "description": "Kräftige Farbpaletten einschließlich Regenbogeneffekten"
+      },
+      "fast": {
+        "title": "Sofortige Erstellung",
+        "description": "Generiere neue Avatare in Millisekunden"
+      }
+    },
+    "examples": {
+      "title": "Perfekt Für",
+      "subtitle": "Kreative Avatare funktionieren großartig in vielen Szenarien",
+      "gaming": {
+        "title": "Gaming-Profile",
+        "description": "Hebe dich in Spielen und Gaming-Communities mit einzigartigen Avataren hervor"
+      },
+      "social": {
+        "title": "Soziale Medien",
+        "description": "Drücke deine kreative Seite auf sozialen Plattformen aus"
+      },
+      "art": {
+        "title": "Digitale Kunst",
+        "description": "Verwende als Inspiration oder Elemente in deinen Kunstprojekten"
+      }
+    },
+    "cta": {
+      "title": "Brauchst Du Etwas Professionelleres?",
+      "description": "Probiere unseren professionellen Avatar-Generator für Geschäftsprofile und formelle Anwendungsfälle.",
+      "professional": "Professionelle Avatare",
+      "blog": "Design Blog"
+    },
+    "generate": "Neu Generieren",
+    "download": "PNG Herunterladen",
+    "generating": "Generiere...",
+    "shortcutGenerate": "Generieren",
+    "shortcutSave": "Speichern",
+    "avatarInfo": "Avatar Informationen",
+    "hairType": "Haarstil",
+    "mouthType": "Mundstil",
+    "noseType": "Nasenstil",
+    "specialHair": "Besondere Haare",
+    "rainbow": "Regenbogen",
+    "normal": "Normal"
   }
 }

@@ -85,5 +85,93 @@
         "1": "100개 이상의 손그림 요소"
       }
     }
+  },
+  "creativeAvatar": {
+    "pageTitle": "크리에이티브 아바타 생성기 - 독특한 AI 아바타 | Avatify",
+    "pageDescription": "크리에이티브 AI 생성기로 독특하고 예술적인 아바타를 만드세요. 게임, 소셜 미디어, 디지털 아트 프로젝트에 완벽한 랜덤하고 눈길을 끄는 아바타를 생성합니다.",
+    "keywords": "크리에이티브 아바타,독특한 아바타,AI 아바타 생성기,랜덤 아바타,예술적 아바타,게임 아바타,디지털 아트 아바타,커스텀 캐릭터",
+    "title": "크리에이티브 아바타 생성기",
+    "subtitle": "창의적인 감각을 가진 독특하고 예술적인 아바타를 생성하세요. 게임 프로필, 소셜 미디어, 디지털 아트 프로젝트에 완벽합니다.",
+    "feature": {
+      "unique": "독특한 디자인",
+      "artistic": "예술적 스타일",
+      "instant": "즉시 생성",
+      "random": "랜덤 생성"
+    },
+    "what": {
+      "title": "크리에이티브 아바타란?",
+      "description": "크리에이티브 아바타는 독특하고 예술적인 아바타를 비전형적인 디자인과 생생한 색상으로 만드는 AI 기반 생성기입니다.",
+      "point1": "수학적 알고리즘으로 각 아바타가 진정으로 독특함을 보장",
+      "point2": "대담한 색상과 창의적인 형태의 예술적 디자인",
+      "point3": "창의성을 표현하고 돋보이기에 완벽"
+    },
+    "howTo": {
+      "title": "사용 방법",
+      "step1": {
+        "title": "아바타 생성",
+        "description": "생성 버튼을 클릭하거나 스페이스바를 눌러 새 아바타 생성"
+      },
+      "step2": {
+        "title": "커스터마이징 및 탐색",
+        "description": "완벽한 크리에이티브 디자인을 찾을 때까지 계속 생성"
+      },
+      "step3": {
+        "title": "다운로드 및 사용",
+        "description": "아바타를 PNG로 저장하고 어디든 사용하세요"
+      }
+    },
+    "features": {
+      "title": "크리에이티브 기능",
+      "artistic": {
+        "title": "예술적 디자인",
+        "description": "창의적 요소가 있는 독특한 손그림 스타일"
+      },
+      "random": {
+        "title": "랜덤 생성",
+        "description": "각 아바타는 완전히 독특하고 예측 불가능"
+      },
+      "colorful": {
+        "title": "생생한 색상",
+        "description": "무지개 효과를 포함한 대담한 색상 팔레트"
+      },
+      "fast": {
+        "title": "즉시 생성",
+        "description": "밀리초 안에 새로운 아바타 생성"
+      }
+    },
+    "examples": {
+      "title": "완벽한 용도",
+      "subtitle": "크리에이티브 아바타는 많은 시나리오에서 훌륭하게 작동합니다",
+      "gaming": {
+        "title": "게임 프로필",
+        "description": "독특한 아바타로 게임과 게임 커뮤니티에서 돋보이세요"
+      },
+      "social": {
+        "title": "소셜 미디어",
+        "description": "소셜 플랫폼에서 창의적인 면을 표현하세요"
+      },
+      "art": {
+        "title": "디지털 아트",
+        "description": "아트 프로젝트에서 영감이나 요소로 사용"
+      }
+    },
+    "cta": {
+      "title": "더 전문적인 것이 필요하신가요?",
+      "description": "비즈니스 프로필과 공식적인 용도를 위해 전문 아바타 생성기를 사용해보세요.",
+      "professional": "전문 아바타",
+      "blog": "디자인 블로그"
+    },
+    "generate": "새로 생성",
+    "download": "PNG 다운로드",
+    "generating": "생성 중...",
+    "shortcutGenerate": "생성",
+    "shortcutSave": "저장",
+    "avatarInfo": "아바타 정보",
+    "hairType": "헤어 스타일",
+    "mouthType": "입 스타일",
+    "noseType": "코 스타일",
+    "specialHair": "특별한 헤어",
+    "rainbow": "무지개",
+    "normal": "일반"
   }
 }
