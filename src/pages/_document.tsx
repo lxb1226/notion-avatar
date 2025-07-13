@@ -6,6 +6,12 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
+          {/* 代码高亮样式 */}
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+          />
+          
           {/* Google Analytics */}
           <script
             async

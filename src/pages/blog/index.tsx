@@ -6,29 +6,90 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { BlogPost } from '../types/blog';
-import { getBlogPosts, getFeaturedPosts } from '../lib/blog';
+import { getOptimizedBlogPosts } from '../../lib/blog';
+import { formatDate } from '../../utils/blog';
+
+interface OptimizedBlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  author: {
+    name: string;
+    avatar: string;
+  };
+  publishedAt: string;
+  readingTime: number;
+  category: string;
+  featuredImage: string;
+}
 
 interface BlogPageProps {
-  posts: BlogPost[];
-  featuredPosts: BlogPost[];
+  posts: OptimizedBlogPost[];
+  featuredPosts: OptimizedBlogPost[];
   categories: string[];
+  totalPosts: number;
 }
 
 export default function Blog({
-  posts,
+  posts: initialPosts,
   featuredPosts,
   categories,
+  totalPosts,
 }: BlogPageProps) {
   const { t } = useTranslation('common');
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [posts, setPosts] = useState<OptimizedBlogPost[]>(initialPosts);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   const filteredPosts =
     selectedCategory === 'all'
       ? posts
       : posts.filter((post) => post.category === selectedCategory);
+
+  const loadMorePosts = async () => {
+    if (loading) return;
+
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `/api/blog/posts?locale=${
+          router.locale || 'en'
+        }&offset=${posts.length}&limit=6&category=${selectedCategory}`,
+      );
+      const data = await response.json();
+
+      if (data.posts.length > 0) {
+        setPosts((prev) => [...prev, ...data.posts]);
+        setHasMore(data.hasMore);
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error('Error loading more posts:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 重置分类时重新加载文章
+  const handleCategoryChange = async (category: string) => {
+    setSelectedCategory(category);
+    if (category === 'all') {
+      setPosts(initialPosts);
+      setHasMore(totalPosts > initialPosts.length);
+    } else {
+      // 过滤现有文章
+      const filtered = posts.filter((post) => post.category === category);
+      setPosts(filtered);
+      setHasMore(false); // 简化处理，分类筛选时不支持加载更多
+    }
+  };
 
   // 博客页面结构化数据
   const blogSchema = {
@@ -117,6 +178,7 @@ export default function Blog({
                         alt={post.title}
                         layout="fill"
                         objectFit="cover"
+                        priority={featuredPosts.indexOf(post) === 0} // 第一个精选文章使用优先级
                       />
                     </div>
                     <div className="p-6">
@@ -153,7 +215,7 @@ export default function Blog({
                           </span>
                         </div>
                         <span className="text-sm text-gray-500">
-                          {new Date(post.publishedAt).toLocaleDateString()}
+                          {formatDate(post.publishedAt, router.locale)}
                         </span>
                       </div>
                     </div>
@@ -168,7 +230,7 @@ export default function Blog({
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 type="button"
-                onClick={() => setSelectedCategory('all')}
+                onClick={() => handleCategoryChange('all')}
                 className={`px-6 py-2 rounded-full border-2 font-medium transition-colors ${
                   selectedCategory === 'all'
                     ? 'bg-black text-white border-black'
@@ -181,7 +243,7 @@ export default function Blog({
                 <button
                   type="button"
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-6 py-2 rounded-full border-2 font-medium transition-colors ${
                     selectedCategory === category
                       ? 'bg-black text-white border-black'
@@ -246,13 +308,27 @@ export default function Blog({
                         </span>
                       </div>
                       <span className="text-sm text-gray-500">
-                        {new Date(post.publishedAt).toLocaleDateString()}
+                        {formatDate(post.publishedAt, router.locale)}
                       </span>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
+
+            {/* Load More Button */}
+            {hasMore && selectedCategory === 'all' && (
+              <div className="text-center mt-12">
+                <button
+                  type="button"
+                  onClick={loadMorePosts}
+                  disabled={loading}
+                  className="inline-block bg-gray-100 text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? t('loading') : t('loadMore')}
+                </button>
+              </div>
+            )}
           </section>
 
           {/* CTA Section */}
@@ -281,17 +357,58 @@ export default function Blog({
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const posts = await getBlogPosts(locale || 'en');
-  const featuredPosts = await getFeaturedPosts(locale || 'en');
-  const categories = [...new Set(posts.map((post) => post.category))];
+  // 使用优化函数获取数据，减少传输的数据量
+  const allPosts = await getOptimizedBlogPosts(locale || 'en');
+  const featuredPosts = allPosts.filter((post) => post.featured);
+  const categories = [
+    ...new Set(allPosts.map((post) => post.category).filter(Boolean)),
+  ];
+
+  // 初始只返回前12篇文章，减少数据量
+  const posts = allPosts.slice(0, 12).map((post) => ({
+    id: post.id,
+    title: post.title,
+    slug: post.slug,
+    excerpt:
+      post.excerpt && post.excerpt.length > 150
+        ? `${post.excerpt.substring(0, 150)}...`
+        : post.excerpt,
+    author: {
+      name: post.author?.name,
+      avatar: post.author?.avatar,
+    },
+    publishedAt: post.publishedAt,
+    readingTime: post.readingTime,
+    category: post.category,
+    featuredImage: post.featuredImage,
+  }));
+
+  const optimizedFeaturedPosts = featuredPosts.slice(0, 2).map((post) => ({
+    id: post.id,
+    title: post.title,
+    slug: post.slug,
+    excerpt:
+      post.excerpt && post.excerpt.length > 150
+        ? `${post.excerpt.substring(0, 150)}...`
+        : post.excerpt,
+    author: {
+      name: post.author?.name,
+      avatar: post.author?.avatar,
+    },
+    publishedAt: post.publishedAt,
+    readingTime: post.readingTime,
+    category: post.category,
+    featuredImage: post.featuredImage,
+  }));
 
   return {
     props: {
       ...(await serverSideTranslations(locale || 'en', ['common'])),
       posts,
-      featuredPosts,
+      featuredPosts: optimizedFeaturedPosts,
       categories,
+      totalPosts: allPosts.length,
     },
-    revalidate: 3600, // Revalidate every hour
+    revalidate: 3600, // 重新生成页面间隔（秒）
   };
 };
