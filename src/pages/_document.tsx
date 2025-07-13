@@ -11,11 +11,11 @@ class Document extends NextDocument {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
-          <script
+          {/* <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3671095188342075"
             crossOrigin="anonymous"
-          />
+          /> */}
           <script
             dangerouslySetInnerHTML={{
               __html: `
