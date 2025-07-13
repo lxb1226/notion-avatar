@@ -9,16 +9,16 @@ An online tool for making notion-style avatars.
 
 I18n supported:
 
-- [English](https://notion-avatar.app/en)
-- [简体中文](https://notion-avatar.app/zh)
-- [繁體中文](https://notion-avatar.app/zh-TW)
-- [한국어](https://notion-avatar.app/ko)
-- [日本語](https://notion-avatar.app/ja)
-- [Español](https://notion-avatar.app/es)
-- [Français](https://notion-avatar.app/fr)
-- [Deutsch](https://notion-avatar.app/de)
-- [Português](https://notion-avatar.app/pt)
-- [Русский](https://notion-avatar.app/ru)
+- [English](https://avatify.online/en)
+- [简体中文](https://avatify.online/zh)
+- [繁體中文](https://avatify.online/zh-TW)
+- [한국어](https://avatify.online/ko)
+- [日本語](https://avatify.online/ja)
+- [Español](https://avatify.online/es)
+- [Français](https://avatify.online/fr)
+- [Deutsch](https://avatify.online/de)
+- [Português](https://avatify.online/pt)
+- [Русский](https://avatify.online/ru)
 
 ## Styles
 

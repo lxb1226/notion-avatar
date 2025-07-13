@@ -12,7 +12,7 @@ import UseCases from './components/UseCases';
 import FAQSection from './components/FAQSection';
 import CTASection from './components/CTASection';
 
-const URL = `https://notion-avatar.app/`;
+const URL = `https://avatify.online/`;
 
 function Home() {
   const { t } = useTranslation(`common`);
@@ -162,23 +162,15 @@ function Home() {
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
-        <link rel="canonical" href="https://notion-avatar.app" />
+        <link rel="canonical" href="https://avatify.online" />
 
         {/* Hreflang tags for international SEO */}
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://notion-avatar.app/en"
-        />
-        <link
-          rel="alternate"
-          hrefLang="zh"
-          href="https://notion-avatar.app/zh"
-        />
+        <link rel="alternate" hrefLang="en" href="https://avatify.online/en" />
+        <link rel="alternate" hrefLang="zh" href="https://avatify.online/zh" />
         <link
           rel="alternate"
           hrefLang="x-default"
-          href="https://notion-avatar.app"
+          href="https://avatify.online"
         />
 
         {/* Preconnect for performance */}

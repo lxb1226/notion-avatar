@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://notion-avatar.app</loc>
+    <loc>https://avatify.online</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avatify.online/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://avatify.online/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avatify.online"/>
   </url>
   
   <url>
-    <loc>https://notion-avatar.app/faq</loc>
+    <loc>https://avatify.online/faq</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/faq"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/faq"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avatify.online/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://avatify.online/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avatify.online/faq"/>
   </url>
   
   <url>
-    <loc>https://notion-avatar.app/contact</loc>
+    <loc>https://avatify.online/contact</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avatify.online/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://avatify.online/zh/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avatify.online/contact"/>
   </url>
   
   <url>
-    <loc>https://notion-avatar.app/privacy</loc>
+    <loc>https://avatify.online/privacy</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://notion-avatar.app/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://notion-avatar.app/zh/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notion-avatar.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avatify.online/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://avatify.online/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avatify.online/privacy"/>
   </url>
 </urlset>
