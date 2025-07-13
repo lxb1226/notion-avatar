@@ -87,7 +87,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-600 text-center md:text-left">
-              <p>{t('copyrightText', { year: currentYear })}.</p>
+              <p>{t('copyrightText', { year: currentYear })}</p>
             </div>
 
             <div className="flex items-center space-x-4 text-sm text-gray-600">
