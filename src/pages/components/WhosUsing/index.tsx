@@ -110,7 +110,7 @@ export default function WhosUsing() {
                       {item.content}
                     </p>
                     <p className="mt-2 text-xs text-gray-700">
-                      {new Date(item.date).toLocaleDateString()}
+                      {item.date}
                     </p>
                   </div>
                 </div>
