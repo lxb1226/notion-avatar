@@ -3,7 +3,7 @@
 ![cover](./public/social.png)
 
 
-# Notion Avatar Maker
+# Notion Avatify
 
 An online tool for making notion-style avatars.
 

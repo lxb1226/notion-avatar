@@ -16,7 +16,7 @@ export default function Header() {
               <div className="w-12 h-12 bg-white border-3 border-black rounded-full flex items-center justify-center p-2 shadow-sm">
                 <Image
                   src="/logo.gif"
-                  alt="Avatar Maker Logo"
+                  alt="Avatify Logo"
                   width={32}
                   height={32}
                   className="rounded-full"

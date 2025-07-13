@@ -72,7 +72,7 @@ export default function SocialDemo() {
             <div className="mt-2 w-full h-48 md:36 relative border-2 border-gray-100 rounded-lg">
               <Image
                 src="/social.png"
-                alt="Notion Avatar Maker"
+                alt="Notion Avatify"
                 layout="fill"
                 objectFit="contain"
                 className="rounded-xl"

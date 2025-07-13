@@ -63,13 +63,13 @@
     "name": "張小明",
     "handle": "xiaoming",
     "bio": "全端工程師 / 開源愛好者",
-    "tweet": "剛用 Notion Avatar Maker 製作了新頭像！簡約的設計風格真的太棒了 ✨",
+    "tweet": "剛用 Notion Avatify 製作了新頭像！簡約的設計風格真的太棒了 ✨",
     "shareTitle": "分享我的 Notion 風格頭像",
-    "shareText": "快來看看我用 Notion Avatar Maker 製作的新頭像！"
+    "shareText": "快來看看我用 Notion Avatify 製作的新頭像！"
   },
   "resourceStore": {
     "title": "設計資源",
-    "description": "獲取 Notion Avatar Maker 的完整設計資源包，包含網站設計稿和裝飾元素",
+    "description": "獲取 Notion Avatify 的完整設計資源包，包含網站設計稿和裝飾元素",
     "buyNow": "立即購買",
     "designPack": {
       "title": "完整網站設計稿",

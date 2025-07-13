@@ -44,7 +44,7 @@
   "christmas": "Navidad",
   "downloadSuccess": "¡Descarga exitosa!",
   "shareModalHint": "¡Comparte en tus redes sociales favoritas!",
-  "shareContent": "¡Acabo de crear un avatar con Notion Avatar Maker, échale un vistazo!",
+  "shareContent": "¡Acabo de crear un avatar con Notion Avatify, échale un vistazo!",
   "avatarMaker": "Creador de Avatar",
   "you": "Tú",
   "chatDemo": {
@@ -59,13 +59,13 @@
     "name": "Phill Zou",
     "handle": "phillzou",
     "bio": "Desarrollador Full-stack / Entusiasta del Open Source",
-    "tweet": "¡Acabo de crear mi avatar con Notion Avatar Maker! Me encanta este estilo minimalista ✨",
+    "tweet": "¡Acabo de crear mi avatar con Notion Avatify! Me encanta este estilo minimalista ✨",
     "shareTitle": "Compartir mi avatar estilo Notion",
-    "shareText": "¡Mira mi nuevo avatar hecho con Notion Avatar Maker!"
+    "shareText": "¡Mira mi nuevo avatar hecho con Notion Avatify!"
   },
   "resourceStore": {
     "title": "Recursos de Diseño",
-    "description": "Obtén el paquete completo de recursos de diseño para Notion Avatar Maker, incluyendo diseño web y elementos decorativos",
+    "description": "Obtén el paquete completo de recursos de diseño para Notion Avatify, incluyendo diseño web y elementos decorativos",
     "buyNow": "Comprar Ahora",
     "designPack": {
       "title": "Diseño Completo del Sitio Web",

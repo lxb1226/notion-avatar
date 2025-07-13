@@ -35,7 +35,7 @@
   "downloadTip": "В настоящее время поддерживаются форматы svg и png, попробуйте изменить формат в кнопке загрузки",
   "downloadSuccess": "Загрузка завершена",
   "shareModalHint": "Поделитесь в любимых соцсетях!",
-  "shareContent": "Я только что создал аватар с помощью Notion Avatar Maker, посмотрите!",
+  "shareContent": "Я только что создал аватар с помощью Notion Avatify, посмотрите!",
   "avatarMaker": "Создатель Аватаров",
   "whosUsing": "Кто использует",
   "whosUsingDescription": "Команды и пользователи по всему миру используют Notion Avatar",
@@ -54,13 +54,13 @@
     "name": "Phill Zou",
     "handle": "phillzou",
     "bio": "Full-stack разработчик / Энтузиаст Open Source",
-    "tweet": "Только что создал свой аватар в Notion Avatar Maker! Обожаю этот минималистичный стиль ✨",
+    "tweet": "Только что создал свой аватар в Notion Avatify! Обожаю этот минималистичный стиль ✨",
     "shareTitle": "Поделиться моим аватаром в стиле Notion",
-    "shareText": "Посмотрите мой новый аватар, созданный в Notion Avatar Maker!"
+    "shareText": "Посмотрите мой новый аватар, созданный в Notion Avatify!"
   },
   "resourceStore": {
     "title": "Ресурсы Дизайна",
-    "description": "Получите полный пакет дизайн-ресурсов для Notion Avatar Maker, включая дизайн сайта и декоративные элементы",
+    "description": "Получите полный пакет дизайн-ресурсов для Notion Avatify, включая дизайн сайта и декоративные элементы",
     "buyNow": "Купить Сейчас",
     "designPack": {
       "title": "Полный Дизайн Сайта",
