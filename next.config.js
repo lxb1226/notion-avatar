@@ -10,7 +10,19 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   i18n,
   reactStrictMode: true,
-  webpack: (config) => {
+  // Enable fast refresh explicitly
+  experimental: {
+    esmExternals: true,
+  },
+  webpack: (config, { dev }) => {
+    // Improve file watching for hot reload in development
+    if (dev) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    
     config.module.rules.push({
       test: /\.svg$/,
       use: 'raw-loader',
