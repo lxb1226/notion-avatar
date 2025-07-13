@@ -147,7 +147,7 @@
   "privacyPolicy": "隐私政策",
   "faq": "常见问题",
   "footerDescription": "为社交媒体档案、团队目录和个人品牌创建独特的手绘风格头像。免费、即时、无需注册。",
-  "copyrightText": "© {year} Avatify. 保留所有权利。",
+  "copyrightText": "© {{year}} Avatify. 保留所有权利。",
   "madeWithLove": "用❤️为全球创作者制作",
   "createCustomAvatars": "创建自定义头像",
   "create": "创建",

@@ -111,7 +111,7 @@
   "legal": "Legal",
   "privacyPolicy": "Privacy Policy",
   "footerDescription": "Create unique, hand-drawn style avatars for your social media profiles, team directories, and personal branding. Free, instant, and no registration required.",
-  "copyrightText": "© {year} Avatify. All rights reserved.",
+  "copyrightText": "© {{year}} Avatify. All rights reserved.",
   "madeWithLove": "Made with ❤️ for creators worldwide",
   "createCustomAvatars": "Create Custom Avatars",
   "create": "Create",
