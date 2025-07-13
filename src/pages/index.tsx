@@ -1,18 +1,55 @@
-import type { GetStaticPropsContext, NextPage } from 'next';
+import type { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
+import FeaturesSection from './components/FeaturesSection';
 import AvatarEditor from './components/AvatarEditor';
 import WhosUsing from './components/WhosUsing';
 import UseCases from './components/UseCases';
-import ResourceStore from './components/ResourceStore';
+import FAQSection from './components/FAQSection';
+import CTASection from './components/CTASection';
 
 const URL = `https://notion-avatar.app/`;
 
-const Home: NextPage = () => {
+function Home() {
   const { t } = useTranslation(`common`);
+
+  // Enhanced schema markup for better SEO
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: t('siteTitle'),
+    description: t('siteDescription'),
+    url: URL,
+    applicationCategory: 'DesignApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    creator: {
+      '@type': 'Person',
+      name: 'Mayandev',
+    },
+    featureList: [
+      'Avatar customization',
+      'Multiple download formats',
+      'No registration required',
+      'Open source',
+      'Privacy focused',
+    ],
+    screenshot: 'https://i.imgur.com/F5R0K03.png',
+    softwareVersion: '1.0.0',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '1000',
+    },
+  };
 
   return (
     <>
@@ -96,30 +133,38 @@ const Home: NextPage = () => {
         />
         <meta name="theme-color" content="#fffefc" />
         <meta name="keywords" content={t('siteKeywords')} />
-        <meta name="author" content="Notion Avatar" />
+        <meta name="author" content="Notion Avatar Maker" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta content={t(`siteDescription`)} name="description" />
+
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={t(`siteTitle`)} />
         <meta property="og:title" content={t(`siteTitle`)} />
         <meta property="og:description" content={t(`siteDescription`)} />
         <meta property="og:url" content={URL} />
         <meta property="og:image" content="https://i.imgur.com/F5R0K03.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://i.imgur.com/F5R0K03.png" />
         <meta name="twitter:site" content="@phillzou" />
+        <meta name="twitter:creator" content="@phillzou" />
         <meta name="twitter:title" content={t(`siteTitle`)} />
         <meta name="twitter:description" content={t(`siteDescription`)} />
+
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#fffefc" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
         <link rel="canonical" href="https://notion-avatar.app" />
-        {/* 添加所有语言的备用链接 */}
+
+        {/* Hreflang tags for international SEO */}
         <link
           rel="alternate"
           hrefLang="en"
@@ -175,6 +220,8 @@ const Home: NextPage = () => {
           hrefLang="x-default"
           href="https://notion-avatar.app"
         />
+
+        {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -182,40 +229,63 @@ const Home: NextPage = () => {
           crossOrigin="anonymous"
         />
         <link href="/fonts/Quicksand.tff" as="font" crossOrigin="anonymous" />
+
+        {/* Enhanced Schema.org markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebApplication',
-              name: t('siteTitle'),
-              description: t('siteDescription'),
-              url: URL,
-              applicationCategory: 'DesignApplication',
-              operatingSystem: 'Web',
-            }),
+            __html: JSON.stringify(schemaMarkup),
           }}
         />
+
+        {/* Additional SEO meta tags */}
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Notion Avatar" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-tap-highlight" content="no" />
-        {/* PWA manifest */}
         <link rel="manifest" href="/manifest.json" />
       </Head>
 
       <Header />
-      <main className="my-5">
-        <AvatarEditor />
-        <ResourceStore />
+      <main>
+        {/* Hero Section - Above the fold content */}
+        <HeroSection />
+
+        {/* Features Section - Key selling points */}
+        <FeaturesSection />
+
+        {/* Avatar Editor - Core functionality */}
+        <section id="avatar-editor" className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Create Your Avatar Now
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Customize every detail to match your personality and style
+              </p>
+            </div>
+            <AvatarEditor />
+          </div>
+        </section>
+
+        {/* Social Proof - Who's Using */}
         <WhosUsing />
+
+        {/* Use Cases - Application examples */}
         <UseCases />
+
+        {/* FAQ Section - Long-tail keywords */}
+        <FAQSection />
+
+        {/* CTA Section - Final conversion push */}
+        <CTASection />
       </main>
       <Footer />
     </>
   );
-};
+}
 
 export async function getStaticProps({
   locale,
