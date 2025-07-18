@@ -1,4 +1,7 @@
 const { i18n } = require('./next-i18next.config');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -18,7 +21,17 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     esmExternals: true,
+    // Enable modern builds for better performance
+    modern: true,
+    // Enable CSS optimization
+    optimizeCss: true,
   },
+
+  // Enable SWC minification with aggressive settings
+  swcMinify: true,
+
+  // Compression settings
+  compress: true,
 
   // Image optimization
   images: {
@@ -108,9 +121,11 @@ const nextConfig = {
       config.optimization.usedExports = true;
       config.optimization.sideEffects = false;
 
-      // Optimize chunks
+      // Optimize chunks for better performance
       config.optimization.splitChunks = {
         chunks: 'all',
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
           default: {
             minChunks: 2,
@@ -122,12 +137,28 @@ const nextConfig = {
             name: 'vendors',
             priority: -10,
             chunks: 'all',
+            maxSize: 244000,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
             enforce: true,
+            maxSize: 244000,
+          },
+          // Separate chunk for large libraries
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react',
+            chunks: 'all',
+            priority: 10,
+          },
+          // Separate chunk for i18n
+          i18n: {
+            test: /[\\/]node_modules[\\/](next-i18next|i18next|react-i18next)[\\/]/,
+            name: 'i18n',
+            chunks: 'all',
+            priority: 5,
           },
         },
       };
@@ -142,4 +173,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPWA(nextConfig);
+module.exports = withBundleAnalyzer(withPWA(nextConfig));

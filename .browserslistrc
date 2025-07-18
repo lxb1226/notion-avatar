@@ -1,15 +1,16 @@
 # Modern browsers for production builds
 # This reduces polyfills and transforms for better performance
 
-# Production - Modern browsers only
+# Production - Modern browsers only (more aggressive)
 [production]
-> 1%
-last 2 Chrome versions
-last 2 Firefox versions
-last 2 Safari versions
-last 2 Edge versions
+Chrome >= 91
+Firefox >= 90
+Safari >= 14
+Edge >= 91
 not IE 11
 not dead
+supports es6-module
+supports es6-module-dynamic-import
 
 # Development - Include more browsers for testing
 [development]

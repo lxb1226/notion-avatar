@@ -16,9 +16,9 @@ export default function HeroSection() {
           fill
           style={{ objectFit: 'cover' }}
           className="opacity-5"
-          priority={false}
+          priority={true}
           sizes="100vw"
-          quality={75}
+          quality={85}
         />
       </div>
 

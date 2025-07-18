@@ -12,6 +12,9 @@ import FontOptimizer from '../components/FontOptimizer';
 import ResourceOptimizer from '../components/ResourceOptimizer';
 import ImageOptimizer from '../components/ImageOptimizer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
+import BFCacheOptimizer from '../components/BFCacheOptimizer';
+import NetworkOptimizer from '../components/NetworkOptimizer';
+import TaskScheduler from '../components/TaskScheduler';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -40,6 +43,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ResourceOptimizer />
       <ImageOptimizer />
       <PerformanceMonitor />
+      <BFCacheOptimizer />
+      <NetworkOptimizer />
+      <TaskScheduler />
       <AnyComponent {...pageProps} />
       <Toaster />
     </>

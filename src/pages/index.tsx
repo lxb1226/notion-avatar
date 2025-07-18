@@ -190,12 +190,13 @@ function Home() {
           crossOrigin="anonymous"
         />
 
-        {/* Preload critical images for LCP optimization */}
+        {/* Preload critical images for LCP optimization - highest priority */}
         <link
           rel="preload"
           href="/image/scribble.png"
           as="image"
           type="image/png"
+          fetchpriority="high"
         />
 
         {/* Preload critical icons */}
@@ -204,6 +205,21 @@ function Home() {
           href="/icon/dice.svg"
           as="image"
           type="image/svg+xml"
+          fetchpriority="high"
+        />
+
+        {/* Preload other critical images */}
+        <link
+          rel="preload"
+          href="/image/avatar-5.png"
+          as="image"
+          type="image/png"
+        />
+        <link
+          rel="preload"
+          href="/image/avatar-6.png"
+          as="image"
+          type="image/png"
         />
 
         {/* Enhanced Schema.org markup */}
