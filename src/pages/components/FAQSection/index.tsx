@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 export default function FAQSection() {
   const { t } = useTranslation('common');

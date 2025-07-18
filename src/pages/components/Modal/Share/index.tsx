@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Modal from '../Common';
 
@@ -97,6 +97,7 @@ export default function ShareModal({ onCancel, image }: ShareModalProps) {
                 height={24}
                 className="mr-2 hover:cursor-pointer"
                 onClick={shareToX}
+                style={{ width: '24px', height: '24px' }}
               />
               <Image
                 src="/icon/facebook-logo.svg"
@@ -105,6 +106,7 @@ export default function ShareModal({ onCancel, image }: ShareModalProps) {
                 height={24}
                 className="mr-2 hover:cursor-pointer"
                 onClick={shareToFacebook}
+                style={{ width: '24px', height: '24px' }}
               />
               <Image
                 src="/icon/ins-logo.svg"

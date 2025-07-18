@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import UglyAvatarGenerator from './components/UglyAvatarGenerator';

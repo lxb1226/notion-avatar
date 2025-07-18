@@ -1,0 +1,19 @@
+# Modern browsers for production builds
+# This reduces polyfills and transforms for better performance
+
+# Production - Modern browsers only
+[production]
+> 1%
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+not IE 11
+not dead
+
+# Development - Include more browsers for testing
+[development]
+> 0.5%
+last 2 versions
+not IE 11
+not dead

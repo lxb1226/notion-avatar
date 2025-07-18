@@ -5,7 +5,7 @@ import {
 } from '@/const';
 import { AvatarPickerConfig } from '@/types';
 
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
@@ -60,6 +60,8 @@ export default function AvatarPicker({
                       }
                       width={50}
                       height={50}
+                      alt={`${avatarPart.part} option ${index}`}
+                      style={{ width: '50px', height: '50px' }}
                     />
                   </div>
                 </button>

@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 type UserType = {
   title: string;
@@ -129,8 +129,9 @@ export default function WhosUsing() {
                         userIndex < 4 ? 'jpg' : 'png'
                       }`}
                       alt={user}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="32px"
                     />
                   </div>
                 ))}

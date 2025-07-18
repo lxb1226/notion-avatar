@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
@@ -176,9 +176,10 @@ export default function Blog({
                       <Image
                         src={post.featuredImage}
                         alt={post.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: 'cover' }}
                         priority={featuredPosts.indexOf(post) === 0} // 第一个精选文章使用优先级
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <div className="p-6">
@@ -270,8 +271,9 @@ export default function Blog({
                     <Image
                       src={post.featuredImage}
                       alt={post.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                   <div className="p-6">

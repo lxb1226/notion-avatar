@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
@@ -13,9 +13,12 @@ export default function HeroSection() {
         <Image
           src="/image/scribble.png"
           alt="Decorative scribbles"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-5"
+          priority={false}
+          sizes="100vw"
+          quality={75}
         />
       </div>
 
@@ -77,6 +80,8 @@ export default function HeroSection() {
                 width={24}
                 height={24}
                 className="mr-3"
+                priority={true}
+                quality={100}
               />
               {t('startCreating')}
             </button>
@@ -91,6 +96,8 @@ export default function HeroSection() {
                 alt="Twitter/X"
                 width={32}
                 height={32}
+                priority={false}
+                quality={85}
               />
               <span className="text-2xl font-bold">LinkedIn</span>
               <Image
@@ -98,6 +105,8 @@ export default function HeroSection() {
                 alt="Instagram"
                 width={32}
                 height={32}
+                priority={false}
+                quality={85}
               />
             </div>
           </div>

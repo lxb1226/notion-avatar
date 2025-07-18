@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function SocialDemo() {
@@ -36,8 +36,10 @@ export default function SocialDemo() {
             <Image
               src="/image/avatar-6.png"
               alt="Profile"
-              layout="fill"
+              fill
               className="rounded-full border-3 border-black"
+              style={{ objectFit: 'cover' }}
+              sizes="80px"
             />
           </div>
           <h2 className="text-xl font-bold mb-2">{t('socialDemo.name')}</h2>
@@ -48,7 +50,13 @@ export default function SocialDemo() {
               href="https://x.com/phillzou"
               className="text-gray-600 hover:text-black"
             >
-              <Image src="/icon/x-logo.svg" width={24} height={24} alt="X" />
+              <Image
+                src="/icon/x-logo.svg"
+                width={24}
+                height={24}
+                alt="X"
+                style={{ width: '24px', height: '24px' }}
+              />
             </a>
           </div>
         </div>
@@ -59,8 +67,10 @@ export default function SocialDemo() {
             <Image
               src="/image/avatar-6.png"
               alt="Profile"
-              layout="fill"
+              fill
               className="rounded-full border-2 border-black"
+              style={{ objectFit: 'cover' }}
+              sizes="48px"
             />
           </div>
           <div className="flex-1">
@@ -73,9 +83,10 @@ export default function SocialDemo() {
               <Image
                 src="/social.png"
                 alt="Notion Avatify"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: 'contain' }}
                 className="rounded-xl"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
             <div className="mt-4 flex items-center space-x-12 text-gray-500">

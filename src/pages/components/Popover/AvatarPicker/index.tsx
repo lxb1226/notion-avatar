@@ -1,7 +1,7 @@
 import { AvatarStyleCountExtra, FestivalTimeMapping } from '@/const';
 import { AvatarPickerConfig } from '@/types';
 
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Popover from '../Common';
 
@@ -68,6 +68,8 @@ export default function AvatarPickerPopover({
                       }
                       width={50}
                       height={50}
+                      alt={`${avatarPart.part} option ${index}`}
+                      style={{ width: '50px', height: '50px' }}
                     />
                   </div>
                 </button>

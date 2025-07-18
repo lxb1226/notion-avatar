@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 export default function ResourceStore() {
   const { t } = useTranslation('common');
@@ -13,7 +13,13 @@ export default function ResourceStore() {
           <h2 className="text-2xl font-bold mb-4 relative  inline-block">
             {t('resourceStore.title')}
             <span className="absolute top-[-32px] left-[-32px]">
-              <Image src="/icon/bling.svg" width={32} height={34} />
+              <Image
+                src="/icon/bling.svg"
+                width={32}
+                height={34}
+                alt="Bling decoration"
+                style={{ width: '32px', height: '34px' }}
+              />
             </span>
           </h2>
           <p className="text-gray-600">{t('resourceStore.description')}</p>
@@ -24,9 +30,10 @@ export default function ResourceStore() {
               <Image
                 src="/social.png"
                 alt="Figma Design Resources"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <h3 className="text-xl font-bold mb-4">
@@ -79,9 +86,10 @@ export default function ResourceStore() {
               <Image
                 src="/image/scribble.png"
                 alt="Scribbles Resources"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <h3 className="text-xl font-bold mb-4">

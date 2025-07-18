@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -196,8 +196,9 @@ export default function Header() {
         <Image
           src="/image/scribble.png"
           alt="Decorative scribbles"
-          layout="fill"
-          objectFit="contain"
+          fill
+          style={{ objectFit: 'contain' }}
+          sizes="64px"
         />
       </div>
     </header>

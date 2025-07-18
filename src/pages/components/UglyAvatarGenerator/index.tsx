@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import {
   generateUglyAvatar,
   pointsToPath,

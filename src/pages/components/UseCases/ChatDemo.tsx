@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 type Message = {
   sender: string;
@@ -42,8 +42,10 @@ export default function ChatDemo() {
           <Image
             src="/image/avatar-5.png"
             alt="Sofia Davis"
-            layout="fill"
+            fill
             className="rounded-full border-3 border-black"
+            style={{ objectFit: 'cover' }}
+            sizes="40px"
           />
         </div>
         <div>
@@ -70,8 +72,10 @@ export default function ChatDemo() {
                     : '/image/avatar-5.png'
                 }
                 alt={message.sender}
-                layout="fill"
+                fill
                 className="rounded-full border-3 border-black"
+                style={{ objectFit: 'cover' }}
+                sizes="40px"
               />
             </div>
             <div

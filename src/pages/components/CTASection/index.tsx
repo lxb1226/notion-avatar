@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 export default function CTASection() {
   const { t } = useTranslation('common');
@@ -11,9 +11,10 @@ export default function CTASection() {
         <Image
           src="/image/scribble.png"
           alt="Decorative scribbles"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-10"
+          sizes="100vw"
         />
       </div>
 

@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import ChatDemo from './ChatDemo';
 import SocialDemo from './SocialDemo';
 
@@ -84,7 +84,13 @@ export default function UseCases() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 relative inline-block">
             {t('useCases')}
             <span className="absolute -top-2 -right-6">
-              <Image src="/icon/star.svg" width={20} height={20} alt="Star" />
+              <Image
+                src="/icon/star.svg"
+                width={20}
+                height={20}
+                alt="Star"
+                style={{ width: '20px', height: '20px' }}
+              />
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -109,6 +115,7 @@ export default function UseCases() {
                   height={32}
                   alt={useCase.title}
                   className="group-hover:scale-110 transition-transform duration-200"
+                  style={{ width: '32px', height: '32px' }}
                 />
               </div>
 

@@ -6,11 +6,27 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          {/* 代码高亮样式 */}
+          {/* DNS prefetch for external resources */}
+          <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+          <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="//www.clarity.ms" />
+
+          {/* Preconnect for critical external resources */}
+          <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+
+          {/* 代码高亮样式 - 使用preload + onload for non-blocking */}
           <link
-            rel="stylesheet"
+            rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+            as="style"
+            onLoad="this.onload=null;this.rel='stylesheet'"
           />
+          <noscript>
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+            />
+          </noscript>
 
           {/* Google Analytics */}
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (

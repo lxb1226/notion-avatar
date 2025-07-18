@@ -180,7 +180,31 @@ function Home() {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link href="/fonts/Quicksand.ttf" as="font" crossOrigin="anonymous" />
+
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="/fonts/Quicksand.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+
+        {/* Preload critical images for LCP optimization */}
+        <link
+          rel="preload"
+          href="/image/scribble.png"
+          as="image"
+          type="image/png"
+        />
+
+        {/* Preload critical icons */}
+        <link
+          rel="preload"
+          href="/icon/dice.svg"
+          as="image"
+          type="image/svg+xml"
+        />
 
         {/* Enhanced Schema.org markup */}
         <script

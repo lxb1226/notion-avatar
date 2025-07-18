@@ -8,6 +8,10 @@ import { appWithTranslation } from 'next-i18next';
 import { Toaster } from 'react-hot-toast';
 import * as ga from '../lib/ga';
 import { initClarity } from '../lib/clarity';
+import FontOptimizer from '../components/FontOptimizer';
+import ResourceOptimizer from '../components/ResourceOptimizer';
+import ImageOptimizer from '../components/ImageOptimizer';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -32,6 +36,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <FontOptimizer />
+      <ResourceOptimizer />
+      <ImageOptimizer />
+      <PerformanceMonitor />
       <AnyComponent {...pageProps} />
       <Toaster />
     </>

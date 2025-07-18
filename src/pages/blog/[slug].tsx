@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
 import Header from '../components/Header';
@@ -67,7 +67,8 @@ const mdxComponents = {
         width={800}
         height={400}
         className="rounded-lg"
-        layout="responsive"
+        style={{ width: '100%', height: 'auto' }}
+        sizes="(max-width: 768px) 100vw, 800px"
       />
     </div>
   ),
@@ -241,9 +242,10 @@ export default function BlogPostPage({
             <Image
               src={post.featuredImage}
               alt={post.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               priority
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
 
@@ -312,8 +314,9 @@ export default function BlogPostPage({
                       <Image
                         src={relatedPost.featuredImage}
                         alt={relatedPost.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                     <div className="p-6">
