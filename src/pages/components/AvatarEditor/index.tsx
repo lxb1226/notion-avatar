@@ -29,11 +29,13 @@ import ShareModal from '../Modal/Share';
 
 import PalettePopover from '../Popover/Palette';
 import AvatarPickerPopover from '../Popover/AvatarPicker';
+import ClientOnly from '../../components/ClientOnly';
 
 export default function AvatarEditor() {
   const router = useRouter();
 
-  const [config, setConfig] = useState({ ...getRandomStyle() });
+  // Initialize with random config - ClientOnly will handle SSR mismatch
+  const [config, setConfig] = useState(() => getRandomStyle());
   const [preview, setPreview] = useState('');
   const [imageType, setImageType] = useState('png' as ImageType);
   const { modalStates, toggleModal } = useModalStates(ModalKeyMap);
@@ -48,6 +50,8 @@ export default function AvatarEditor() {
   const festival = getCurrentFestival();
 
   const { t } = useTranslation('common');
+
+
 
   // hack
   useEffect(() => {
@@ -286,14 +290,16 @@ export default function AvatarEditor() {
                   }}
                   tooltip={t(type)}
                 >
-                  <Image
-                    src={`/avatar/part/${type}/${type}-${
-                      config[type as AvatarPart]
-                    }.svg`}
-                    width={30}
-                    height={30}
-                    alt={`${type} option`}
-                  />
+                  <ClientOnly fallback={<div className="w-[30px] h-[30px] bg-gray-200 animate-pulse rounded" />}>
+                    <Image
+                      src={`/avatar/part/${type}/${type}-${
+                        config[type as AvatarPart]
+                      }.svg`}
+                      width={30}
+                      height={30}
+                      alt={`${type} option`}
+                    />
+                  </ClientOnly>
                 </SelectionWrapper>
                 {avatarPart?.part === type && (
                   <AvatarPickerPopover
@@ -330,12 +336,14 @@ export default function AvatarEditor() {
                   className="relative "
                 >
                   <>
-                    <Image
-                      src={`/avatar/part/festival/${festival}/${festival}-${config[festival]}.svg`}
-                      width={30}
-                      height={30}
-                      alt={`${festival} festival option`}
-                    />
+                    <ClientOnly fallback={<div className="w-[30px] h-[30px] bg-gray-200 animate-pulse rounded" />}>
+                      <Image
+                        src={`/avatar/part/festival/${festival}/${festival}-${config[festival]}.svg`}
+                        width={30}
+                        height={30}
+                        alt={`${festival} festival option`}
+                      />
+                    </ClientOnly>
                     <span className="top-0 right-0 absolute bg-red-600 text-xs text-white rounded translate-x-1/2 px-1 -translate-y-1/2">
                       New
                     </span>

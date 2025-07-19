@@ -17,10 +17,10 @@ class TaskScheduler {
   // Run tasks with time slicing
   private async runTasks() {
     this.isRunning = true;
-    
+
     while (this.tasks.length > 0) {
       const startTime = performance.now();
-      
+
       // Run tasks until we hit the time limit
       while (this.tasks.length > 0 && (performance.now() - startTime) < this.maxTaskTime) {
         const task = this.tasks.shift();
@@ -28,22 +28,24 @@ class TaskScheduler {
           try {
             task();
           } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Task execution error:', error);
           }
         }
       }
-      
+
       // Yield control back to the browser
       if (this.tasks.length > 0) {
-        await this.yieldToMain();
+        // eslint-disable-next-line no-await-in-loop
+        await TaskScheduler.yieldToMain();
       }
     }
-    
+
     this.isRunning = false;
   }
 
   // Yield control to the main thread
-  private yieldToMain(): Promise<void> {
+  private static yieldToMain(): Promise<void> {
     return new Promise(resolve => {
       // Use scheduler.postTask if available, otherwise fallback to setTimeout
       if ('scheduler' in window && 'postTask' in (window as any).scheduler) {
@@ -97,6 +99,7 @@ export default function TaskSchedulerComponent() {
           const duration = performance.now() - startTime;
 
           if (duration > 16) { // Longer than one frame
+            // eslint-disable-next-line no-console
             console.warn(`Long frame task detected: ${duration}ms`);
           }
         });
@@ -115,8 +118,9 @@ export default function TaskSchedulerComponent() {
             const entries = list.getEntries();
             entries.forEach((entry) => {
               if (entry.duration > 50) {
+                // eslint-disable-next-line no-console
                 console.warn(`Long task detected: ${entry.name} took ${entry.duration}ms`);
-                
+
                 // Report to analytics if available
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'long_task', {
@@ -132,7 +136,8 @@ export default function TaskSchedulerComponent() {
           observer.observe({ entryTypes: ['longtask'] });
           
           return () => observer.disconnect();
-        } catch (error) {
+        } catch {
+          // eslint-disable-next-line no-console
           console.warn('Long task observer not supported');
         }
       }
