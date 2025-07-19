@@ -29,7 +29,7 @@ import ShareModal from '../Modal/Share';
 
 import PalettePopover from '../Popover/Palette';
 import AvatarPickerPopover from '../Popover/AvatarPicker';
-import ClientOnly from '../../components/ClientOnly';
+import ClientOnly from '../../../components/ClientOnly';
 
 export default function AvatarEditor() {
   const router = useRouter();
