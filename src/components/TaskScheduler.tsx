@@ -74,29 +74,35 @@ export default function TaskSchedulerComponent() {
     const optimizeLongTasks = () => {
       // Override setTimeout to use task scheduling for long delays
       const originalSetTimeout = window.setTimeout;
-      window.setTimeout = function(callback: () => void, delay: number) {
-        if (delay > 100) {
+      const customSetTimeout = (callback: TimerHandler, delay?: number, ...args: any[]): number => {
+        if (delay && delay > 100) {
           // For long delays, use task scheduler
           return originalSetTimeout(() => {
-            taskScheduler.addTask(callback);
+            if (typeof callback === 'function') {
+              taskScheduler.addTask(callback as () => void);
+            }
           }, delay);
         }
-        return originalSetTimeout(callback, delay);
+        return originalSetTimeout(callback, delay, ...args);
       };
+
+      (window as any).setTimeout = customSetTimeout;
 
       // Override requestAnimationFrame to prevent long frame tasks
       const originalRAF = window.requestAnimationFrame;
-      window.requestAnimationFrame = function(callback: FrameRequestCallback) {
+      const customRAF = (callback: FrameRequestCallback): number => {
         return originalRAF((timestamp) => {
           const startTime = performance.now();
           callback(timestamp);
           const duration = performance.now() - startTime;
-          
+
           if (duration > 16) { // Longer than one frame
             console.warn(`Long frame task detected: ${duration}ms`);
           }
         });
       };
+
+      (window as any).requestAnimationFrame = customRAF;
     };
 
     optimizeLongTasks();

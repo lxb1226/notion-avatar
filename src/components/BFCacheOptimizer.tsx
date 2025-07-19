@@ -32,21 +32,26 @@ export default function BFCacheOptimizer() {
       };
 
       // 3. Clean up timers and intervals
-      const activeTimers: NodeJS.Timeout[] = [];
+      const activeTimers: number[] = [];
       const originalSetTimeout = window.setTimeout;
       const originalSetInterval = window.setInterval;
 
-      window.setTimeout = function(callback, delay, ...args) {
+      // Store original functions for cleanup
+      const customSetTimeout = (callback: TimerHandler, delay?: number, ...args: any[]): number => {
         const id = originalSetTimeout(callback, delay, ...args);
         activeTimers.push(id);
         return id;
       };
 
-      window.setInterval = function(callback, delay, ...args) {
+      const customSetInterval = (callback: TimerHandler, delay?: number, ...args: any[]): number => {
         const id = originalSetInterval(callback, delay, ...args);
         activeTimers.push(id);
         return id;
       };
+
+      // Override with proper typing
+      (window as any).setTimeout = customSetTimeout;
+      (window as any).setInterval = customSetInterval;
 
       const cleanupTimers = () => {
         activeTimers.forEach(id => {
@@ -54,6 +59,10 @@ export default function BFCacheOptimizer() {
           clearInterval(id);
         });
         activeTimers.length = 0;
+
+        // Restore original functions
+        window.setTimeout = originalSetTimeout;
+        window.setInterval = originalSetInterval;
       };
 
       // Add event listeners

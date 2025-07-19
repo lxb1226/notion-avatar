@@ -196,7 +196,7 @@ function Home() {
           href="/image/scribble.png"
           as="image"
           type="image/png"
-          fetchpriority="high"
+          fetchPriority="high"
         />
 
         {/* Preload critical icons */}
@@ -205,7 +205,7 @@ function Home() {
           href="/icon/dice.svg"
           as="image"
           type="image/svg+xml"
-          fetchpriority="high"
+          fetchPriority="high"
         />
 
         {/* Preload other critical images */}

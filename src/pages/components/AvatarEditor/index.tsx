@@ -250,6 +250,7 @@ export default function AvatarEditor() {
                   width={30}
                   height={30}
                   src={flip ? '/icon/flip-left.svg' : '/icon/flip-right.svg'}
+                  alt={flip ? 'Flip left' : 'Flip right'}
                 />
               </button>
               <div className="relative" id="palette-picker">
@@ -258,7 +259,7 @@ export default function AvatarEditor() {
                   className="w-8 h-8 sm:w-12 sm:h-12 tooltip ml-2"
                   onClick={onOpenPaletteModal}
                 >
-                  <Image width={30} height={30} src="/icon/palette.svg" />
+                  <Image width={30} height={30} src="/icon/palette.svg" alt="Color palette" />
                 </button>
                 {modalStates.palette && (
                   <PalettePopover
@@ -291,6 +292,7 @@ export default function AvatarEditor() {
                     }.svg`}
                     width={30}
                     height={30}
+                    alt={`${type} option`}
                   />
                 </SelectionWrapper>
                 {avatarPart?.part === type && (
@@ -332,6 +334,7 @@ export default function AvatarEditor() {
                       src={`/avatar/part/festival/${festival}/${festival}-${config[festival]}.svg`}
                       width={30}
                       height={30}
+                      alt={`${festival} festival option`}
                     />
                     <span className="top-0 right-0 absolute bg-red-600 text-xs text-white rounded translate-x-1/2 px-1 -translate-y-1/2">
                       New
@@ -444,7 +447,7 @@ export default function AvatarEditor() {
         </div>
 
         <div className="mt-6">
-          <Image src={'/icon/arrow.svg'} width={59} height={126} />
+          <Image src={'/icon/arrow.svg'} width={59} height={126} alt="Arrow" />
         </div>
       </div>
     </>

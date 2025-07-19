@@ -21,14 +21,9 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     esmExternals: true,
-    // Enable modern builds for better performance
-    modern: true,
     // Enable CSS optimization
     optimizeCss: true,
   },
-
-  // Enable SWC minification with aggressive settings
-  swcMinify: true,
 
   // Compression settings
   compress: true,

@@ -19,7 +19,11 @@ class Document extends NextDocument {
             rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
             as="style"
-            onLoad="this.onload=null;this.rel='stylesheet'"
+            onLoad={(e) => {
+              const target = e.target as HTMLLinkElement;
+              target.onload = null;
+              target.rel = 'stylesheet';
+            }}
           />
           <noscript>
             <link

@@ -13,16 +13,16 @@ const LoadingFallback = ({ className = '' }: { className?: string }) => (
 );
 
 // Higher-order component for lazy loading
-export function withLazyLoading<T extends {}>(
+export function withLazyLoading<T extends Record<string, any>>(
   importFunc: () => Promise<{ default: ComponentType<T> }>,
   fallback?: React.ReactNode
 ) {
   const LazyComponent = lazy(importFunc);
-  
+
   return function LazyLoadedComponent(props: T) {
     return (
       <Suspense fallback={fallback || <LoadingFallback />}>
-        <LazyComponent {...props} />
+        <LazyComponent {...(props as any)} />
       </Suspense>
     );
   };
