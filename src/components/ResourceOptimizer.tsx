@@ -13,9 +13,8 @@ export default function ResourceOptimizer() {
         // Critical images for LCP
         { href: '/image/scribble.png', as: 'image', type: 'image/png' },
         
-        // Preload next likely navigation targets
-        { href: '/blog', as: 'document' },
-        { href: '/faq', as: 'document' },
+        // Prefetch next likely navigation targets (using prefetch instead of preload)
+        // These will be handled separately with prefetch
       ];
 
       criticalResources.forEach(resource => {
@@ -34,9 +33,23 @@ export default function ResourceOptimizer() {
     };
 
     // Delay preloading to avoid blocking critical resources
-    const timer = setTimeout(preloadCriticalResources, 1000);
+    const preloadTimer = setTimeout(preloadCriticalResources, 1000);
 
-    return () => clearTimeout(timer);
+    // Prefetch likely navigation targets after a longer delay
+    const prefetchTimer = setTimeout(() => {
+      const prefetchTargets = ['/blog', '/faq', '/creative-avatar'];
+      prefetchTargets.forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+    }, 3000);
+
+    return () => {
+      clearTimeout(preloadTimer);
+      clearTimeout(prefetchTimer);
+    };
   }, []);
 
   useEffect(() => {

@@ -117,7 +117,8 @@ export default function TaskSchedulerComponent() {
           const observer = new PerformanceObserver((list) => {
             const entries = list.getEntries();
             entries.forEach((entry) => {
-              if (entry.duration > 50) {
+              // Only warn about tasks longer than 100ms to reduce noise
+              if (entry.duration > 100) {
                 // eslint-disable-next-line no-console
                 console.warn(`Long task detected: ${entry.name} took ${entry.duration}ms`);
 

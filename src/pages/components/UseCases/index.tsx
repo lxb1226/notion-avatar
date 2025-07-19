@@ -89,7 +89,7 @@ export default function UseCases() {
                 width={20}
                 height={20}
                 alt="Star"
-                style={{ width: '20px', height: '20px' }}
+                style={{ width: 'auto', height: 'auto' }}
               />
             </span>
           </h2>
